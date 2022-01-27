@@ -198,13 +198,13 @@ $endif$
 % ---
 
 % Declaração das siglas
-\include{lista_siglas}
+%\include{lista_siglas}
 
 % Declaração dos simbolos
-\include{lista_simbolos}
+%\include{lista_simbolos}
 
 % compila a lista de abreviaturas e siglas e a lista de símbolos
-\makenoidxglossaries
+%\makenoidxglossaries
 
 % ---
 
@@ -263,44 +263,44 @@ $endif$
 % ---
 
 % ---
-% Inserir folha de aprovação
+% Inserir folha de aprovação (eu exclui)!
 % ---
-\begin{folhadeaprovacao}
-	\OnehalfSpacing
-	\centering
-	\imprimirautor\\%
-	\vspace*{10pt}		
-	\textbf{\imprimirtitulo}%
-	\ifnotempty{\imprimirsubtitulo}{:~\imprimirsubtitulo}\\%
+%\begin{folhadeaprovacao}
+%	\OnehalfSpacing
+%	\centering
+%	\imprimirautor\\%
+%	\vspace*{10pt}		
+%	\textbf{\imprimirtitulo}%
+%	\ifnotempty{\imprimirsubtitulo}{:~\imprimirsubtitulo}\\%
 	%		\vspace*{31.5pt}%3\baselineskip
-	\vspace*{\baselineskip}
-	%\begin{minipage}{\textwidth}
-	O presente trabalho em nível de \imprimirnivel~foi avaliado e aprovado por banca examinadora composta pelos seguintes membros:\\
-	%\end{minipage}%
-	\vspace*{\baselineskip}
-  $for(examiner)$
-  $examiner.title$ $examiner.name$, $examiner.degree$\\
-  $examiner.institution$ - $examiner.inst_short$\\
-  \vspace*{\baselineskip}
-  $endfor$
+%	\vspace*{\baselineskip}
+%	%\begin{minipage}{\textwidth}
+%	O presente trabalho em nível de \imprimirnivel~foi avaliado e aprovado por banca examinadora composta pelos seguintes membros:\\
+%	%\end{minipage}%
+%	\vspace*{\baselineskip}
+  %$for(examiner)$
+  %$examiner.title$ $examiner.name$, $examiner.degree$\\
+  %$examiner.institution$ - $examiner.inst_short$\\
+  %\vspace*{\baselineskip}
+ % $endfor$
   
-	\vspace*{2\baselineskip}
-	\begin{minipage}{\textwidth}
-		Certificamos que esta é a \textbf{versão original e final} do trabalho de conclusão que foi julgado adequado para obtenção do título de \imprimirformacao.\\
-	\end{minipage}
-	%    \vspace{-0.7cm}
-	\vspace*{\fill}
-	\assinatura{\OnehalfSpacing $coordinator$ \\ Coordenação do Programa de Pós-Graduação}
-	\vspace*{\fill}
-	\assinatura{\OnehalfSpacing\imprimirorientador \\ \imprimirorientadorRotulo}
+%	\vspace*{2\baselineskip}
+%	\begin{minipage}{\textwidth}
+%		Certificamos que esta é a \textbf{versão original e final} do trabalho de conclusão que foi julgado adequado para obtenção do título de \imprimirformacao.\\
+%	\end{minipage}
+%	%    \vspace{-0.7cm}
+%	\vspace*{\fill}
+%	\assinatura{\OnehalfSpacing $coordinator$ \\ Coordenação do Programa de Pós-Graduação}
+%	\vspace*{\fill}
+%	\assinatura{\OnehalfSpacing\imprimirorientador \\ \imprimirorientadorRotulo}
 	%	\ifnotempty{\imprimircoorientador}{
 	%	\assinatura{\imprimircoorientador \\ \imprimircoorientadorRotulo \\
 	%		\imprimirinstituicao~--~\imprimirinstituicaosigla}
 	%	}
 	% \newpage
-	\vspace*{\fill}
-	\imprimirlocal, \imprimirano.
-\end{folhadeaprovacao}
+%	\vspace*{\fill}
+%	\imprimirlocal, \imprimirano.
+%\end{folhadeaprovacao}
 % ---
 
 % ---
@@ -396,9 +396,9 @@ $endif$
 	% ---
 	% inserir lista de quadros
 	% ---
-	\pdfbookmark[0]{\listofquadrosname}{loq}
-	\listofquadros*
-	\cleardoublepage
+	%\pdfbookmark[0]{\listofquadrosname}{loq}
+	%\listofquadros*
+	%\cleardoublepage
 	% ---
 	
 	% ---
@@ -412,13 +412,13 @@ $endif$
 	% ---
 	% inserir lista de abreviaturas e siglas (devem ser declarados no preambulo)
 	% ---
-	\imprimirlistadesiglas
+	%\imprimirlistadesiglas
 	% ---
 	
 	% ---
 	% inserir lista de símbolos (devem ser declarados no preambulo)
 	% ---
-	\imprimirlistadesimbolos
+	%\imprimirlistadesimbolos
 	% ---
 	
 	% ---
