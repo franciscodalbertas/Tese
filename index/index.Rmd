@@ -18,7 +18,7 @@ examiner:
   institution: Universidade Federal de Santa Catarina
   inst_short: UFSC
 - title: Prof.
-  name: Examinador 2
+  name: Examinador 2eh
   degree: Dr.
   institution: Fédération Internationale des Géomètres
   inst_short: FIG
@@ -122,10 +122,16 @@ they are handled in the YAML above differently for the PDF version.
 <!-- The {.unnumbered} option here means that the introduction will be 
 "Chapter 0." You can also use {-} for no numbers
 on chapters.
+
+notas chico: ideal seria se livrar da folha de aprovação! e ai elaborar ela junto
+ com a nota catalográfica!! resolve bem!
+ 
+ tenho que tirar tb lista de quadros! (isso mexe com o template)
+
 -->
-# Introdução {#intro}
 
 
-Desenvolver
+
+
 
 
