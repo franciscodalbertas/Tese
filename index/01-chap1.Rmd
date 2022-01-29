@@ -13,7 +13,7 @@ específicos.
 
 ### Objetivo Geral
 
-Descrição...\gls{Bacen}
+Descrição
 
 
 ### Objetivos Específicos
