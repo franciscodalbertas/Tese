@@ -9,6 +9,9 @@
 % - 30/10/2019: Alisson L. Furlani, adjusted some spacing errors and changed math fonts
 % - 17/01/2019: Alisson L. Furlani, updated certification page
 % - 03/03/2020: Luiz F. P. Droubi, change file to be used as a template with R.
+
+% eu (francisco) fiz adaptações pra tese USP
+
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 
@@ -40,7 +43,7 @@ $endfor$
 \let\newfloat\undefined
 \usepackage{floatrow}
 \floatsetup[table]{capposition=top}
-\floatsetup[figure]{capposition=top}
+\floatsetup[figure]{capposition=bottom} % regula posicao da legenda!
 
 \newcommand{\pkg}[1]{{\normalfont\fontseries{b}\selectfont #1}}
 \let\proglang=\textsf
@@ -59,7 +62,7 @@ $endif$
 \newcommand{\banexos}{\begin{anexosenv}}
 \newcommand{\eanexos}{\end{anexosenv}}
 
-
+%################################
 
 % alteracao de template pra funcionar bib!!
 
@@ -262,9 +265,9 @@ $endif$
 \end{fichacatalografica}
 % ---
 
-% ---
+% ------------------------------------------------
 % Inserir folha de aprovação (eu exclui)!
-% ---
+% ------------------------------------------------
 %\begin{folhadeaprovacao}
 %	\OnehalfSpacing
 %	\centering
