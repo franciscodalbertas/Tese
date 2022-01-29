@@ -1,84 +1,31 @@
-# Plots
+# When do benefits from ecosystem restoration offset costs? 
 
-Este *template* contém algumas seções criadas na tentativa de facilitar seu uso.
-No entanto, não há um limite máximo ou mínimo de seção a ser utilizado no 
-trabalho. Cabe a cada autor definir a quantidade que melhor atenda à sua 
-necessidade.  
+$~$
 
-Para criar figuras com o \proglang{R}, pode-se seguir o padrão do código
-abaixo, utilizado para produzir as imagens da figura \@ref(fig:anscombe):
+\begin{flushleft}
 
-```{r anscombe, fig.cap = "O quarteto de Anscombe.", out.width = "49%", fig.show='hold', echo = TRUE}
-data(anscombe)
-plot(y1~x1, data = anscombe)
-abline(lm(y1~x1, data = anscombe))
-plot(y2~x2, data = anscombe)
-abline(lm(y2~x2, data = anscombe))
-plot(y3~x3, data = anscombe)
-abline(lm(y3~x3, data = anscombe))
-plot(y4~x4, data = anscombe)
-abline(lm(y4~x4, data = anscombe))
-``` 
-\bcenter
-Fonte: do Autor.
-\ecenter
+Francisco d’Albertas1, Gerd Sparovek, Luis Fernando Guedes Pinto, 
+Camila Hohlenwerger, Jean Paul Metzger1   
 
-```{r install-ggplot2}
-if(!require(ggplot2))
-  install.packages("ggplot2", repos = "http://cran.rstudio.com")
-```
+\end{flushleft}
 
-Ou utilizando o pacote \pkg{ggplot2} [-@R-ggplot2], obtendo-se a figura \@ref(fig:anscombe2).
+$~$
+$~$
 
-```{r ggplots, echo = TRUE}
-library(ggplot2)
-p1 <- ggplot(anscombe, aes(x = x1, y = y1)) +
-  geom_point(color = "darkorange", size = 1.5) +
-  scale_x_continuous(breaks = seq(0,20,2)) +
-  scale_y_continuous(breaks = seq(0,12,2)) +
-  expand_limits(x = 0, y = 0) +
-  labs(x = "x1", y = "y1",
-       title = "Dataset 1" ) +
-  geom_smooth(method = "lm", se = FALSE)
+\begin{flushleft}
 
-p2 <- ggplot(anscombe, aes(x = x2, y = y2)) +
-  geom_point(color = "darkorange", size = 1.5) +
-  scale_x_continuous(breaks = seq(0,20,2)) +
-  scale_y_continuous(breaks = seq(0,12,2)) +
-  expand_limits(x = 0, y = 0) +
-  labs(x = "x2", y = "y2",
-       title = "Dataset 2" ) +
-  geom_smooth(method = "lm", se = FALSE)
+This chapter was submited to Nature Sustainability and is currently under 
+consideration by the editor
 
-p3 <- ggplot(anscombe, aes(x = x3, y = y3)) +
-  geom_point(color = "darkorange", size = 1.5) +
-  scale_x_continuous(breaks = seq(0,20,2)) +
-  scale_y_continuous(breaks = seq(0,12,2)) +
-  expand_limits(x = 0, y = 0) +
-  labs(x = "x3", y = "y3",
-       title = "Dataset 3" ) +
-  geom_smooth(method = "lm", se = FALSE)
-
-p4 <- ggplot(anscombe, aes(x = x4, y = y4)) +
-  geom_point(color = "darkorange", size = 1.5) +
-  scale_x_continuous(breaks = seq(0,20,2)) +
-  scale_y_continuous(breaks = seq(0,12,2)) +
-  expand_limits(x = 0, y = 0) +
-  labs(x = "x4", y = "y4",
-       title = "Dataset 4" ) +
-  geom_smooth(method = "lm", se = FALSE)
-```
+\end{flushleft}
 
 
+$~$
+$~$
 
-```{r anscombe2, fig.cap = "O Quarteto de Anscombe", out.width="100%"}
-if(!require(cowplot))
-  install.packages("cowplot", repos = "http://cran.rstudio.com")
-library(cowplot)
-theme_set(theme_cowplot(12))
-plot_grid(p1, p2, p3, p4, align = "v", ncol = 2, 
-             labels = list("A", "B", "C", "D"))
-```
-\bcenter
-Fonte: do Autor.
-\ecenter
+
+## Abstract
+
+Restoration is a critical tool for reversing biodiversity declines and mitigating climate change. However, it is a costly intervention. Where restoration provides significant financial benefits, such as by increasing crop yield or providing carbon credits, these costs may be offset. Focusing on a restoration hotspot in the Brazilian Atlantic Forest, we develop restoration scenarios and calculate estimations of their financial balance to understand conditions where restoration costs might be compensated by yield and carbon credit-derived benefits. Our study suggests that restoration costs can be offset by yield increases when farms already have >10% forest cover and restoration targets are below 25% forest cover. Current CO_2 price is not sufficient in offsetting net costs for higher restoration targets. A carbon value of 35-124 USD/ton would be required to promote restoration. The identification of balanced financial conditions, that create landscapes suitable for biodiversity conservation, climate mitigation, and agricultural production, has broader implications and is strategic to scale up restoration.  
+
+## Introduction
