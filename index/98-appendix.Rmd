@@ -2,26 +2,165 @@
 
 <!--
 If you feel it necessary to include an appendix, it goes here.
+
+zera a contagem e adiciona o nome S. Preciso identificar com o nome
+do capitulo
+
 -->
 
+\newcommand{\beginsupplement}{
+  \setcounter{table}{0}  
+  \renewcommand{\thetable}{A\arabic{table}} 
+  \setcounter{figure}{0} 
+  \renewcommand{\thefigure}{A\arabic{figure}}
+}
 
-# DESCRIÇÃO 1 {#appendix-a}
+\beginsupplement
 
-Textos elaborados pelo autor, a fim de completar a sua argumentação. Deve ser 
-precedido da palavra APÊNDICE, identificada por letras maiúsculas consecutivas, 
-travessão e pelo respectivo título. Utilizam-se letras maiúsculas dobradas quando
-esgotadas as letras do alfabeto.
 
-**No arquivo Rmd principal**
+\renewcommand{\figurename}{Figure}
 
-```{r ref.label='include_packages', results='hide', echo = TRUE}
+```{r  include = FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, cache = FALSE, message=FALSE,
+                      warning = FALSE, fig.ext='png', fig.align='center',
+                      fig.path = "images/", fig.pos = "H", dev = "png",
+                      dpi = 300, out.width = "100%")
+
 ```
 
-**No Capítulo \@ref(desenvolvimento):**
 
-```{r ref.label='media-concentracao-urbana', results='hide', echo = TRUE}
+# Supplementary Material - Chapter 1 {#appendix-a}
+
+## Calculating opportunity cost
+
+To estimate land opportunity cost, we have calculated the Net Present Value (NPV) of the main agricultural activities on each municipality from our study region, according to the Brazilian Institute of Geography and Statistics [@ibge_producao_2017]. The NPV is the sum of all cash flows within a determined period in the future, after applying a discount rate, and it is mainly used to determine if an investment will be profitable or will result in loss. It is calculated according to the following formula:
+
+$$ NPV (i,N) = \sum^N_{t=0} \frac {benefits- costs} {(1+i)^t} $$
+  
+  
+where the benefits are the cash inflows and the costs are the cash outflows of each activity, i is the discount rate and t is the time in the future, in years, for which the present value is being calculated.  After accessing the yield per municipality [@ibge_producao_2017], we have calculated the cash flow using production costs and gains from the mains crops [@conab_companhia_2017] and beef and milk production [@cepea_centro_2017] for each municipality for the year 2017. We have applied a discount rate of 8%, following interest rates practiced by agricultural credit financial institutes in Brazil, and previously used in similar studies [@niemeyer_planning_2019-1] and considered a time frame of 20 years, which is the time required by the Natural Vegetation Protection Law for restoration projects to be fully executed. The values were converted to US$ dollars using a convertion rate of 3.21414.
+
+Following the calculation of the NPV, we have calculated the average NPV per municipality of crops and cattle farming weighted by the area of each activity. To spatialize this information, we have crossed the weighted average with the land-use map from 2017 (enfiar ref.!). Whenever the NPV assumed a negative value, we have adopted a conservative approach and transformed the value to 0. Because forestry only occupies 4% of the farms from our dataset, we have extended crops NPV for areas covered with forestry. We have also attributed a value of 0 for areas covered with natural vegetation. The resulting product is an opportunity cost map in dollars $ha^{-1}$ with 30m resolution, covering the entire study region (Figure \@ref(fig:cost)) 
+
+## Bayesian models details
+
+The analysis was conducted using the R package rstanarm [@gabry_rstanarm_2018], an appendage of the rstan [@guo_rstan_2019] package to execute  Markov Chain Monte Carlo. Each model was run with four independent Markov chains of 4000 iterations. The first 2000 was discarded as a warm-up. The model formulation and priors used in the models are presented below.
+
+### Question 1: Drivers affecting the proportion of Legal Reserve declared
+
+The response variable (R) in question 1 is a binary categorical variable representing the amount of Legal Reserve (LR) declared in each property. We divided the analyses into three parts, in which we had the following categories adjusted to the same independent variables: a-) no LR declared vs. LR declared; b -)  some LR allocated but below the legal requirement (LR proportion $>$0 and $<$0.18) vs. full LR requirement allocated  (LR proportion $\geq$ 0.18); c-) full LR allocated with no surplus (LR proportion $\geq$ 0.18 and $\leq$ 0.22) vs. LR surplus allocated (LR proportion $>$0.22). We have considered a different random intercept for each State where the properties are located (Minas Gerais or São Paulo).
+
+$$ R  \sim \text{Binomial}{(1,p_i)}  $$
+$$ logit (p_i) = \alpha_{ESTATE}[i] + (\beta{AS} + \beta{P}+\beta{Ir}+\beta{Div}+\beta{Tr}+\beta{OC}+\beta{APP}+\beta{A}+\beta{V})*p_i $$
+$$ \alpha_{ESTATE[i]}\sim \text{Normal}{(0,10)} $$
+$$ \beta{X_i}\sim \text{Normal}{(0,2.5)}$$
+
+$AS$ = agricultural suitability index (0-1); $P$ = proportion of pasture at the farm; $Ir$= presence of central pivot irrigation; $Div$= diversity of land-uses index; $Tr$= transportation costs, in minutes; $OC$= opportunity cost, in dollars $ha^{-1}$; $APP$=  proportion of Areas of Permanent Protection;$A$= farm area, in hectares; $V$= proportion of natural vegetation.
+
+### Question 2: Drivers affecting the location of LR
+
+The response variable (R) in that case is a binary land-use (agriculture) or land-cover (natural vegetation) category or an LR ( vegetated LR or non-vegetated LR). We randomly sampled 2000 points within each LR class and land-use and land-cover category from our properties database and extracted the values of all independent variables in the models. We have also considered a different random intercept for each property where the land-use or land-cover point was located. For all comparisons, we adopted the agricultural area as the reference variable.
+
+#### *Vegetation vs. agricultural area*
+
+$$ R  \sim \text{Binomial}{(1,p_i)}  $$
+
+$$ logit (p_i) = \alpha_{property}[i] + (\beta{AS} + \beta{Tr}+\beta{APP_d})*p_i $$
+$$ \alpha_{property[i]}\sim \text{Normal}{(0,10)} $$
+
+$$ \beta{X_i}\sim \text{Normal}{(0,2.5)}$$
+
+#### *Vegetated LR  vs agricultural area*
+
+$$ R  \sim \text{Binomial}{(1,p_i)}  $$
+$$ logit (p_i) = \alpha_{property}[i] + (\beta{AS} + \beta{Tr}+\beta{APP_d})*p_i $$
+$$ \alpha_{property[i]}\sim \text{Normal}{(0,10)} $$
+
+$$ \beta{X_i}\sim \text{Normal}{(0,2.5)}$$
+
+#### *Non-vegetated LR vs agricultural area*
+
+$$ R  \sim \text{Binomial}{(1,p_i)}  $$
+$$ logit (p_i) = \alpha_{property}[i] + (\beta{AS} +\beta{Tr}+\beta{APP_d}+\beta{OC}+\beta{V_d})*p_i $$
+$$ \alpha_{property[i]}\sim \text{Normal}{(0,10)} $$
+$$ \beta{X_i}\sim \text{Normal}{(0,2.5)}$$
+
+$AS$ = agricultural suitability index (0-1); $Tr$= transportation costs, in minutes; $OC$= opportunity cost, in dollars $ha^{-1}$; $APP_d$=  Euclidean distance to Areas of Permanent Protection;$A$= farm area, in hectares; $V_d$= Euclidean distance to natural vegetation.
+
+
+## Supplementary Figures
+
+```{r cost, echo=FALSE, fig.align='center',out.width = '90%',fig.cap="Opportunity cost layer."}
+
+library(knitr)
+
+knitr::include_graphics("figure/cost.jpg")
+
+
 ```
 
-# FOR FUN {#appendix-b}
+
+```{r figureS1, echo=FALSE, fig.cap="Main land-uses-land-cover in the study region (>10.000 ha per municipality) from 1985 to 2015.  The data on crops and forest cover was collected in march 2019 from IBGE (Brazilian Institute of Geography and Statistics) and the data on pastures was obtained from MapBiomas collection 2.3 (http://mapbiomas.org).", fig.align='center'}
+
+knitr::include_graphics("figure/figS1.jpg")
+
+```
+
+```{r figureS2,  echo=FALSE,fig.cap="Properties distributed among their Legal Reserve (LR) proportion for all 3,622 farms analyzed. There is an inflation on 0 and 0.2 values, so we have categorized LR proportion in four classes: no LR (proportion=0); LR deficit ( 0≤proportion<0.18); LR compliance  (0.18≤proportion≤0.22); LR surplus (proportion>0.22)"}
+
+knitr::include_graphics("figure/figS2.jpeg")
+
+
+```
+
+```{r figureS3, echo=FALSE,fig.cap="Predicted probability of a farm to declare LR in contrast with farms that do not have any LR declared. The gray shade is the 95\\% confidence interval and the dotted red line represents a 50\\% probability.", fig.align='center'}
+
+knitr::include_graphics("figure/figS3.jpg")
+
+
+```
+
+```{r figureS4, echo=FALSE,fig.cap="Predicted probability of a farm to declare the full LR area in contrast with having a LR proportion below the legal requirement inside the farm.  The gray shade is the 95\\% confidence interval and the dotted red line represents 50\\% probability.", fig.align='center'}
+
+knitr::include_graphics("figure/figS4.jpg")
+
+
+```
+
+```{r figureS5, echo=FALSE,fig.cap="Predicted probability of a farm area to allocate LR surplus in contrast with having LR compliance only. The gray shade is the 95\\% confidence interval and the dotted red line represents 50\\% probability. ", fig.align='center'}
+
+knitr::include_graphics("figure/figS5.jpg")
+
+
+```
+
+```{r figureS6, echo=FALSE,fig.cap="Predicted probability of a farm area to be covered with natural vegetation in contrast of have being converted to agriculture. The gray shade is the 95\\% confidence interval and the dotted red line represent 50\\% probability ", fig.align='center'}
+
+knitr::include_graphics("figure/figS6.jpg")
+
+
+```
+
+```{r figureS7, echo=FALSE,fig.cap="Predicted probability of a farm area to be allocated as vegetated LRs in contrast with an agricultural area. The gray shade is the 95\\% confidence interval and the dotted red line represents 50\\% probability.", fig.align='center'}
+
+knitr::include_graphics("figure/figS7.jpg")
+
+
+```
+
+
+```{r figureS8, echo=FALSE,fig.cap="Predicted probability of a farm area to be allocated as non-vegetated LRs in contrast with agricultural areas. The gray shade is the 95\\% confidence interval and the dotted red line represents 50\\% probability.", fig.align='center'}
+
+knitr::include_graphics("figure/figS8.jpg")
+
+
+```
+
+
+
+
+
+# Supplementary Material - Chapter 2
 
 `r if(knitr:::is_latex_output()) '\\eapendices'`
