@@ -9,8 +9,6 @@ inst_short: 'USP'
 division: 'Instituto de Biosciências'
 coordinator: Beltrano da Silva
 advisor: Jean Paul Meztger
-# If you have more two advisors, un-silence line 7
-#altadvisor: 'Your Other Advisor'
 examiner:
 - title: Prof.
   name: Examinador 1
@@ -35,7 +33,9 @@ output:
   ufscdown::thesis_pdf: 
     citation_package: biblatex
     bib_engine: biber
-#  ufscdown::thesis_gitbook: default
+    fig_caption: yes
+lan: en
+#  Introdução
 #  ufscdown::thesis_word: default
 #  ufscdown::thesis_epub: default
 # If you are creating a PDF you'll need to write your preliminary content (e.g., 
@@ -57,7 +57,7 @@ epigrafe: |
   | "Colocar epígrafe, talvez eliane brum"  
   | (citação da obra)
 # Specify the location of the bibliography below
-bibliography: ["bib/thesis.bib", "bib/references.bib", "bib/pkgs.bib"]
+bibliography: ["bib/ch1.bib", "bib/references.bib", "bib/pkgs.bib"]
 link-citations: yes
 dedication: |
   elaborar dedicatória
@@ -89,7 +89,15 @@ enclose it in a block like this.
 
 If you receive a duplicate label error after knitting, make sure to delete the 
 index.Rmd file and then knit again.
+
+*** mudei label figura pra figure novamente!
+
 -->
+
+
+\renewcommand{\figurename}{Figure}
+\renewcommand{\tablename}{Table}
+
 
 ```{r include_packages, include = FALSE}
 
@@ -101,10 +109,10 @@ type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
 # This chunk ensures that the ufscdown package is
 # installed and loaded. This ufscdown package includes
 # the template files for the thesis.
-if(!require(remotes))
-  install.packages("remotes", repos = "http://cran.rstudio.com")
-if(!require(ufscdown))
-  remotes::install_github("lfpdroubi/ufscdown")
+# if(!require(remotes))
+#   install.packages("remotes", repos = "http://cran.rstudio.com")
+# if(!require(ufscdown))
+#   remotes::install_github("lfpdroubi/ufscdown")
 library(ufscdown)
 ```
 
@@ -130,8 +138,7 @@ notas chico: ideal seria se livrar da folha de aprovação! e ai elaborar ela ju
 
 -->
 
-
-
+# Introdução
 
 
 
