@@ -10,8 +10,6 @@ knitr::opts_chunk$set(echo = FALSE, cache = FALSE, message=FALSE,
                       dpi = 300, out.width = "100%")
 ```
 
-
-
 <!--
 If you feel it necessary to include an appendix, it goes here.
 -->
@@ -155,6 +153,7 @@ knitr::include_graphics("figure/figS8.jpg")
 ```
 
 
+
 \newcommand{\beginsupplement2}{
   \setcounter{table}{0}  
   \renewcommand{\thetable}{B\arabic{table}} 
@@ -168,8 +167,6 @@ knitr::include_graphics("figure/figS8.jpg")
 
 
 # Supplementary Material - Chapter 2  {#appendix-b}
-
-
 
 ## Supplementary Figures
 
