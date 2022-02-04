@@ -2,10 +2,6 @@
 
 <!--
 If you feel it necessary to include an appendix, it goes here.
-
-zera a contagem e adiciona o nome S. Preciso identificar com o nome
-do capitulo
-
 -->
 
 \newcommand{\beginsupplement}{
@@ -16,19 +12,6 @@ do capitulo
 }
 
 \beginsupplement
-
-
-\renewcommand{\figurename}{Figure}
-
-```{r  include = FALSE}
-
-knitr::opts_chunk$set(echo = FALSE, cache = FALSE, message=FALSE,
-                      warning = FALSE, fig.ext='png', fig.align='center',
-                      fig.path = "images/", fig.pos = "H", dev = "png",
-                      dpi = 300, out.width = "100%")
-
-```
-
 
 # Supplementary Material - Chapter 1 {#appendix-a}
 
@@ -155,12 +138,15 @@ knitr::include_graphics("figure/figS7.jpg")
 knitr::include_graphics("figure/figS8.jpg")
 
 
+
+
 ```
 
 
+# Supplementary Material - Chapter 2  {#appendix-b}
 
 
 
-# Supplementary Material - Chapter 2
+
 
 `r if(knitr:::is_latex_output()) '\\eapendices'`
