@@ -89,4 +89,25 @@ include_graphics("figure/cashflow_panel_withveg7.jpeg")
 
 ```
 
+Regional-level scenarios on average led to lower net costs compared to farm-level scenarios, but with less area restored. Interestingly, the regional approach enables legal compliance with lower costs even with compensation schemes concentrated on the region (“local market”), while the farm-level approach favors a higher forest cover (around 25% of the region; Figure \@ref(fig:fig4)a and Supplementary Figure B6) and a lower degree of fragmentation (in total number of fragments), but with forest cover more concentrated in smaller forest patches (Figure \@ref(fig:fig5)). In farm-level scenarios, restoration tends to be done in small areas and as an extension of existing fragments. With a 20% target – which would guarantee legal compliance without compensation outside our study region – the regional approach had an average cash flow 14% higher than the farm-level approach but restored nearly half the area (6,600 ha vs. 11,940 ha; Figure \@ref(fig:fig4)a). This is because to meet a regional target, only 7% of additional forests were required, once remnant forest areas at the farms already summed 14% of the region at the baseline.  On the contrary, for farms with >10% forest cover, the farm-level approach (fl20) had a higher cash flow (Figure \@ref(fig:fig4)b) and is the win-win scenario, in which both benefits and forest cover are maximized.
+
+
+```{r  fig5, echo=FALSE, out.width = "100%", fig.cap="Distribution of forests for each scenario. Total forest area (restored and remnant forest combined) within farms boundaries (a) and total number of forest fragments (b). Farm-level = fl; regional-level=rl. Fragments in figure (a) were grouped in five size classes based on their area, in hectares, as shown in the color legend. "}
+
+
+include_graphics("figure/fig_areafrag_nfragv_new.jpg")
+
+```
+
+Compliance with the Native Vegetation Protection law has the potential to remove 2,6-4,2 million tons of CO2 from the atmosphere in our focal farms, which would require USD ~283-312 million investment to compensate net costs (Figure \@ref(fig:fig6 )). If we assume a carbon value at current levels (~4 dollars/ton) [@donofrio_voluntary_2020], our focal farms would have access to ~ USD 10 – 43 million of restoration compensation, depending on the scenario. This represents a  small fraction (~3-11%) of net intervention costs. To offset net restoration costs with carbon markets, we estimate that the ton of CO2 would have to be traded between USD 35-124, depending on the scenario. While the amount of carbon sequestered had a four-fold increase from lower (10%) to higher (40%) forest cover target scenarios, the total net costs increased only 1.36 fold. As a consequence, the estimated value of carbon to offset restoration costs turned out to be higher in low to intermediate forest cover scenarios (fl10 and, particularly, rl20). 
+
+```{r fig6, echo=FALSE, out.width = "100%", fig.cap="Potential carbon sequestration and the estimated value of carbon to offset restoration costs in the different scenarios. We used literature data  (see Methods) to estimate (a) the above and belowground carbon sequestered by restored forests after 20 years.  The net intervention cost (b)was calculated as the sum of all farm’s negative cash flows in each scenario. With net costs and carbon sequestered, we estimated the carbon value to offset restoration costs (c)."}
+
+include_graphics("figure/carbon.jpeg")
+
+```
+
+## Discussion
+
+
 
