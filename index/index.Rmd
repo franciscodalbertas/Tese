@@ -92,6 +92,18 @@ index.Rmd file and then knit again.
 
 *** mudei label figura pra figure novamente!
 
+# qndo da problema de versao, rodar:
+
+library(tinytex)
+
+tlmgr_install('biber')
+
+tinytex::install_tinytex() 
+
+tlmgr_update()
+
+
+
 -->
 
 
@@ -100,6 +112,8 @@ index.Rmd file and then knit again.
 
 
 ```{r include_packages, include = FALSE}
+
+options(tinytex.verbose = TRUE)
 
 knitr::opts_chunk$set(echo = FALSE, cache = FALSE, message=FALSE, 
                       warning = FALSE, fig.ext='png', fig.align='center', 
