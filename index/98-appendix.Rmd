@@ -1,3 +1,4 @@
+
 `r if(knitr:::is_latex_output()) '\\bapendices'`
 
 ```{r parametros, include = FALSE}
@@ -154,6 +155,16 @@ knitr::include_graphics("figure/figS8.jpg")
 
 
 
+# Supplementary Material - Chapter 2  {#appendix-b}
+
+## Details on models construction and selection
+
+<!--
+reset counting and rename figures and tables
+* ainda tem um erro, aparece parte do codigo
+
+-->
+
 \newcommand{\beginsupplement2}{
   \setcounter{table}{0}  
   \renewcommand{\thetable}{B\arabic{table}} 
@@ -165,18 +176,167 @@ knitr::include_graphics("figure/figS8.jpg")
 
 
 
+For the 16 farms which we collected yield data (60 kg bags $ha^(-1)$ per harvest) related to 92 coffee fields, we calculated a set of local and landscape metrics from different years between 2004-2018 (Supplementary Table B1): minimum distance to forest (in meters),  coffee field area (ha), coffee field perimeter-area ratio (m/m2), mean agricultural suitability of each coffee field [based on the index developed by Sparovek et al. -@sparovek_effects_2015], the coffee-forest edge density (m/m^2), the proportion of vegetation cover surrounding the coffee fields and the proportion of coffee surrounding the coffee fields. 
 
-# Supplementary Material - Chapter 2  {#appendix-b}
+We calculated the landscape metrics (coffee and vegetation cover and the coffee-forest-edge density) on a multiscale circular buffer ranging from 100-1000m radius.      Then, for each variable, we fitted a simpler negative binomial regression model to select the scale with the highest likelihood (Supplementary Table B2). With the most suitable scales, we analyzed the colinearity among them to build the final models.  The edge density was highly correlated with coffee cover and the property area was correlated with the perimeter-area ratio so we did not include those variables in the same model. 
+
+We fitted hierarchical Bayesian models allowing the intercept to vary among year and coffee fields      using a negative binomial distribution and uninformative priors. Each model was run with four independent Markov chains of 4000 iterations. The first 2000 was discarded as a warm-up. The model formulation and priors used in the models are presented below.
+
+$$ yield/ha \sim \text{NB}( \mu_i, \phi)  $$
+
+$$  log (\mu_i)  = \alpha_{FI[i]} + \alpha_{Y[j]} + \beta C_{1km} + \beta F_{1km}+ \beta C_{1km}: \beta F_{1km} + \beta F_{300m} + \beta PA + \beta S $$
+
+$$ \alpha_{FI[i] \sim Nomral(\alpha,\sigma)}  $$
+$$ \alpha_{Y[j] \sim Nomral(\alpha,\sigma)}  $$
+$$ \alpha \sim Student =  t(3,3.7,2.5)  $$
+$$ \sigma \sim Student =  t(3,0,2.5)  $$
+$$ \beta (C_{1km},F_{1km},F_{300m}, CED_{1km}, PA, S) \sim flat  $$
+
+$$ \phi \sim Gamma (0.01,0.01) $$
+
+where $FI$ is the field, $Y$ is the year, $C$ is the proportion of coffee on 1 km buffer, $F_{1km}$ is the proportion of forest on 1 km buffer, $F_{300m}$ is the proportion of forest on 300 m buffer, $PA$ is the coffee field perimeter-area ratio $(m/m_2)$, CED is the coffe-forest edge density (m/$m^2$), $S$ is the agriculture suitability (0-1) and $i$ and $j$ are the identity of the field and the year from where yield data was collected.
+
+We selected the final model by comparing the Leave-one-out cross-validation (LOO) of each of the above models. Model 1 had the lower estimated difference of expected leave-one-out prediction errors (Supplementary Table 3). We also tested whether the removal of the agriculture suitability would incur     a worse performance, which did not happen  so our final yield model is similar to model 1, without the agriculture suitability.
+
+## Unexpected yield trends for regional-level scenarios
+
+Contrary to our expectation, the regional-level approach led to a yield decrease when we target 30 and 40% forest cover.  Meta-analyses on the effects of agricultural diversification have previously identified both positive and negative yield responses [@tamburini_agricultural_2020; @karp_crops_2018].  Complex multitrophic interactions among natural enemies, pests, and crops might lead to more context-dependent situations [@karp_crop_2018; libran-embid_effects_2017], for instance, in which pests are benefited rather than decrease with more surrounding natural vegetation, negatively affecting coffee yield. With such levels of complexity, we might not be able to fully explain this pattern. Nevertheless, we raise two possible complementary explanations. Firstly, regional scenarios induced more concentrated forest patches, favouring situations of high forest cover (>50%) and low coffee cover (<10%) (Supplementary Figure B4). Farms in a similar situation used to build our predictive yield model had lower yields (Supplementary Figure B2a), which can be a consequence of a lower productivity potential where they are located, resulting in higher forest cover. A similar pattern was described for coffee production at the Atlantic Forest, where municipalities with higher forest cover have higher coffee production up to a limit of around 30-40%, above which yield drops [@gonzalez-chaves_forest_2020]. Besides, a block-like configuration of forests reduces the flows of ecosystem services 6 if coffee and forests are distant. Secondly, those same farms used to build the model might have faced negative side-effects of increased pest damage associated with forests, affecting their yields. As a result, our model is penalizing coffee fields in situations of high forest cover and low coffee cover after the restoration.
 
 ## Supplementary Figures
 
-
-```{r figureb1, echo=FALSE,fig.cap="Cost surface generated by the combination of opportunity cost and restoration cost. Restoration costs for the scenarios were estimated using a 30 m resolution raster containing the probability of natural regeneration or the necessity of actively planting seedlings7 and costs with restoration from projects within the Atlantic Rainforest8 .", fig.align='center'}
+```{r figureb1, out.width = "80%",echo=FALSE,fig.cap="Cost surface generated by the combination of opportunity cost and restoration cost. Restoration costs for the scenarios were estimated using a 30 m resolution raster containing the probability of natural regeneration or the necessity of actively planting seedlings7 and costs with restoration from projects within the Atlantic Rainforest8 .", fig.align='center'}
 
 knitr::include_graphics("figure/costmap.jpg")
 
 
 
+
+```
+
+
+
+```{r figureb2, out.width = "100%",echo=FALSE,fig.cap="Cost and benefits used to calculate the final cash flow after the restoration interventions in each scenario. Opportunity cost with forgone production of non-coffee products divided by farm area (a);  restoration costs over 20 years divided by farm area; (b); total coffee area (c); coffee field yield estimated with our spatial yield model(d); total coffee production estimated with the yield model (e); net change in coffee production divided by farm area comparing the future scenarios with the baseline scenario (f); compensation costs divided by farm area for farms with forest cover < 20 \\% after the restoration intervention (g); compensation gains divided by farm area for farms with forest cover > 20 \\% after the restoration intervention (h). Cash values were converted to 2017 US dollars. Farm-level = fl; regional-level=rl."}
+
+
+knitr::include_graphics("figure/panel_costbenefit.jpg")
+
+```
+
+```{r figureb3, out.width = "100%",echo=FALSE,fig.cap="Predicted yield values for the coffee fields in each scenario. Modelled Yield in function of the proportion of forest (x axis) and coffee (y axis) on a 1km circular buffer surrounding the coffee fields. Farm-level = fl; regional-level=rl."}
+
+knitr::include_graphics("figure/predictedYield.jpg")
+
+
+```
+
+```{r figureb4, out.width = "80%",echo=FALSE,fig.cap="Average distance from coffee fields to forests. After generating the land use cover for the scenarios, we calculated the mean distance to forest areas ±1 standard error. Farm-level = fl; regional-level=rl."}
+
+knitr::include_graphics("figure/av_dist.jpg")
+
+```
+
+```{r figureb5, out.width = "100%",echo=FALSE,fig.cap="Final yield model explanatory variables effect on yield. The interaction between the proportion of coffee and forest on a circular buffer surrounding coffee fields (a); the perimeter-area ratio of the coffee fields; and the local forest cover on a circular buffer around the coffee fields."}
+
+knitr::include_graphics("figure/predYield_negbin_mod_simpl.jpg")
+
+```
+
+```{r figureb6, out.width = "100%",echo=FALSE,fig.cap="Farm’s cash flow distribution for each scenario. Cash values were converted to 2017 US dollars. Farm-level = fl; regional-level=rl."}
+
+knitr::include_graphics("figure/cashflow_final.jpeg")
+
+```
+
+```{r figureb7, out.width = "100%",echo=FALSE,fig.cap="Comparison between muncipa lities within our study region and other municipalities in the Atlantic Forest growing coffee. Coffee fields are on average 33 \\% closer to forest patches (163.8m vs. 219.3m) in our region (a). Further, while in our region only C. arabica is grown, 16 \\% of the municipalities elsewhere grow C. canephora and in 12 \\% of them, C. canephora is predominant (b). Unlike Coffea arabica, C. canephora is self-sterile and might be more benefited by a higher abundance of pollinators 5 . The boxplots on show the lower quartile, the median, and the upper quartile of the data distribution.  Data from Gonzales-Chaves et al(2020). "}
+
+knitr::include_graphics("figure/adrian_data.jpg")
+
+```
+
+\newpage
+
+## Supplementary Tables
+
+```{r  echo=FALSE, warning=FALSE}
+
+tl <- read.csv("data\\talhoes.csv")
+
+names(tl)[1] <- "Farm ID"
+names(tl)[2:10] <- c(2006,2008,2009,2010,2013,2014,2015,2016,2018)
+
+library(knitr)
+library(kableExtra)
+
+
+kbl(tl, caption = "Yield/ha data used to build the yield model. The columns correspond to the harvest year and the numbers bellow are the number of fields per farms (identified in the table with a number ID.) ",booktabs=T)%>%
+  #kable_styling(latex_options = "striped") %>%
+  kable_styling(latex_options = c("hold_position")) 
+
+
+
+```
+
+```{r  echo=FALSE, warning=FALSE}
+
+iv <- read.csv("data\\indep_variables.csv",sep=";")
+
+names(iv) <- c("variable","data generation","scale")
+
+kbl(iv, caption = "Independent variables tested to fit the coffee yield model. We included variables in two different scales: local scale (lo) and landscape scale (ls). ",booktabs=T,"pipe",longtable=TRUE)%>%
+  #kable_styling(latex_options = "striped") %>%
+  kable_styling(latex_options = c("hold_position")) 
+
+```
+
+\newpage
+
+<!--
+
+apagar pra funcionar de novo essa porcaria
+
+\KOMAoptions{paper=landscape,pagesize}
+\recalctypearea
+\section{}
+
+-->
+
+
+
+```{r echo=FALSE, warning=FALSE}
+
+#library(stargazer)
+# nao consigo por tabela na horizontal!
+
+sv <- read.csv("data\\sel_variaveis_landscape.csv",sep=";")
+
+sv[,c(2:12,14:17)] <- round(sv[,c(2:12,14:17)],3)
+
+sv[is.na(sv) ] <- ""  
+
+
+
+names(sv) <- c("M",	"Int.",	"100",	"200",	"300",	"400","500", "600"	, "700",	"800",	"900",	"1000"	,"df",	"logLik",	"AIC"	,"delta",	"weight")
+
+
+library(kableExtra)
+
+kbl(sv, caption = "AIC table for the landscape variables tested to build the yield model. Models (M) are ranked by their likelihood for each variable tested (proportion of coffee, coffee-forest edges and proportion of forests). The variables were calculated on a multiscale circular buffer surrounding the coffee fields, ranging from 100-1000 meteres. Models with lower AIC were considered more plausible. Df – degrees of freedom; logLik – log likelihood; AIC – Akaike Information Criteria; delta is the diferrence between the AIC of the first ranked model and the rest. ",booktabs=T,format="latex")%>%
+#kable_styling(latex_options = "striped") %>%
+ kable_styling(latex_options = c("hold_position","scale_down")) #%>%
+#  kableExtra::landscape()
+
+
+
+
+```
+
+```{r echo=FALSE}
+sb <-  read.csv("data\\sel_bayes.csv",sep=";")
+
+names(sb) <- c("","elpd diff.","se diff")
+
+kbl(sb,caption="Comparison among the final models tested. We compared the estimated difference of expected leave-one-out prediction errors (elpd diff) and their standard error difference (se diff). Model 1’ is similar to model 1, but without the agricultural suitability. ",booktabs=T,format="latex")%>%
+  kable_styling(latex_options = c("hold_position"))
 
 ```
 
