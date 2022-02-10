@@ -332,9 +332,11 @@ nopostdot  % Não é colocado ponto ao final da entrada
 		\vspace*{5\baselineskip}
 		\imprimirautor\par%
 		%\vfill
-		\vspace*{8\baselineskip}
-		\textbf{\imprimirtitulo}%
-		\ifnotempty{\imprimirsubtitulo}{:~\imprimirsubtitulo}\par% 
+		\vspace*{6\baselineskip} % diminui valor de 8 para 6
+		\textbf{\imprimirtitulo}\par %adicionei o \par
+		%\vfill %adicionei isso tb
+		%\vspace*{1\baselineskip} %editei essa besteira aqui
+		\ifnotempty{\imprimirsubtitulo}{~\imprimirsubtitulo}\par %tirei o : antes do ~
 		%}    
 		\vfill
 		{%
@@ -358,8 +360,9 @@ nopostdot  % Não é colocado ponto ao final da entrada
 	\vbox to 10cm{%12
 		\imprimirautor\par% 
 		\vspace*{\fill}
-		\textbf{\imprimirtitulo}%
-		\abntex@ifnotempty{\imprimirsubtitulo}{:~\imprimirsubtitulo}\par% 
+		\textbf{\imprimirtitulo}\par%
+		\vspace*{\fill} %adicionei
+		\abntex@ifnotempty{\imprimirsubtitulo}{~\imprimirsubtitulo}\par% tirei o :
 	}
 	\vspace*{\fill}
 	%\vspace*{5cm}%4
