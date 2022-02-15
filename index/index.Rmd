@@ -26,16 +26,18 @@ degree: 'Doutor em Ecologia'
 level: 'doutorado'
 doc_type: 'tese'
 title: 'Caminhos para a intensificação ecológica através da restauração e da certificação agrícola'
-subtitle: 
+subtitle: 'Paths for an ecological intensification of agriculture through restoration and agriculture certification' 
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site
 output: 
-  ufscdown::thesis_pdf: 
+  ufscdown::thesis_pdf:
+   
     citation_package: biblatex
     bib_engine: biber
     fig_caption: yes
-#    extra_dependencies: [tikz, babel]
-      
+    extra_dependencies:
+      babel: [portuges]
+#  ufscdown::thesis_word: default    
 # apagar isso, era tentativa de mudar orientacao
 #    includes: 
 #      in_header: header.tex
@@ -49,8 +51,10 @@ lan: en
 # .RMD files. If you are NOT producing a PDF, you can delete or silence lines 
 # 42-59 in this YAML header.
 abstract: |
-  `r if(knitr:::is_latex_output()) paste(readLines("00-abstract.Rmd"), 
-  collapse = '\n  ')`
+  
+  Criar resumo direto no arquivo principal. Acentos não funcionam usando arquivo externo.
+
+
 palavras-chave: [Palavra-chave 1, Palavra-chave 2]
 foreignabstract: |
   `r if(knitr:::is_latex_output()) paste(readLines("00-foreignabstract.Rmd"), 
@@ -66,43 +70,43 @@ epigrafe: |
 bibliography: ["bib/ch1.bib", "bib/references.bib", "bib/pkgs.bib"]
 link-citations: yes
 dedication: |
-  | para Julia, por estar perto mesmo se a milhares de km
+  | para Julia, pela paciência
   
 thanks: |
-  Gostaria de agradecer em primeiro lugar ao Jean, meu orientador. Aprendi muito – e espero continuar aprendendo – nos últimos oito anos (!) em que trabalhamos juntos.  Sua competência em combinar excelência acadêmica com ciência aplicada será sempre uma inspiração.
-  
-  Agradeço também ao lugar que foi minha casa nesses anos, o LEPaC, e a todos os membros atuais e passados desse laboratório incrível. Foi realmente inspirador conviver com tantas pessoas talentosas e dedicadas em fazer ciência. Nele, além de me formar como pesquisador, fiz amigos que carrego pra toda vida Não me arrisco a esgotar todos nomes, afinal, o LEPaC é uma casa bem grande. Mas deixo aqui registrado quem me acompanhou ao longo do doutorado: Isa, Ju, Mila, Clarice, Carito, Doug, Artur, Karla, Naty, Vitor, Duda, Mari, Ma Fê (se esqueci de alguém, me desculpem). Faço também um agradecimento especial ao Adrian, que foi um grande parceiro nesse voo turbulento. As trocas acadêmicas e pessoais, impossíveis de serem separadas, com certeza me fizeram um Ecólogo melhor. Obrigado, Wellington, por todo o suporte. 
+  Gostaria de agradecer em primeiro lugar ao Jean, meu orientador. Aprendi muito – e espero continuar aprendendo – nos últimos oito anos (!) em que trabalhamos juntos.
+    
+  Agradeço também ao lugar que foi minha casa nesses anos, o LEPaC, e a todos os membros atuais e passados desse laboratório incrível. Foi realmente inspirador conviver com tantas pessoas talentosas e dedicadas em fazer ciência. Nele, além de me formar como pesquisador, fiz amigos que carrego pra toda vida. Não me arrisco a esgotar nomes, afinal, o LEPaC é uma casa bem grande. Mas deixo aqui registrado quem me acompanhou ao longo do doutorado: Isa, Ju, Mila, Clarice, Carito, Pat, Doug, Artur, Adrian, Karla, Naty, Vitor, Duda, Mari, Ma Fê (se esqueci de alguém, me desculpem). As trocas acadêmicas e pessoais, impossíveis de serem separadas, com certeza me fizeram um Ecólogo melhor. Obrigado também ao Wellington por todo o suporte.
   
   Não menos importante, especialmente em tempos tão sombrios, o meu trabalho só foi possível graças ao financiamento que me foi concedido pela CAPES e pela FAPESP. Espero estar à altura do voto de confiança que me foi dado, e que a minha pesquisa seja um pequeno tijolo na construção de um futuro possível.
   
-  Tive o privilégio – mais um – de visitar a Universidade de Cambridge, no Reino Unido, durante 12 meses. Foram meses muito ricos e de muito trabalho. Fui muito bem recebido e queria registrar aqui minha gratidão, em particular ao Andrew Balmford, meu supervisor e ao Charles, Gianlucca e Fernando, que fizeram com que eu me sentisse em casa.
+  Tive o privilégio –- mais um –- de visitar a Universidade de Cambridge, no Reino Unido, durante 12 meses. Foram meses muito ricos e de muito trabalho. Fui muito bem recebido e queria registrar aqui minha gratidão ao Andrew Balmford, meu supervisor e ao Charles, Gianlucca e Fernando, que fizeram com que eu me sentisse em casa.
   
-  Obrigado também ao Departamento de Ecologia da USP, pra mim, o melhor departamento já criado. Sinto um orgulho danado de ter feito parte desse lugar. Por trás dele estão pessoas incríveis como a Vera e a Shirlene, espinhas dorsais do programa. Além, é claro, de discentes incríveis, que se tornam amigos, companhias de cafés, conversas, viagens e planos.
+  Obrigado também ao Departamento de Ecologia da USP. Sinto um orgulho danado de ter feito parte desse lugar. Por trás dele estão pessoas incríveis como a Vera e a Shirlene, espinhas dorsais do programa. Além, é claro, dos discentes, que se tornam amigos, companhias de cafés, conversas, viagens e planos.
   
   O doutorado é um processo cheio de rituais. Um deles é a formação de um comitê de acompanhamento, para nos socorrer de vez em quando. Agradeço ao Gerd Sparovek e ao Luis Fernando Guedes Pinto por toparem ser parte dele. Outro é a banca de qualificação. Obrigado à Rozely Ferreira, Carla Morsello e ao Paulo Guilherme Mollin pelas contribuições.
   
-  Ao longo do meu treinamento como pesquisador eu aprendi que uma introdução deve ser estruturada como uma pirâmide invertida; começa-se com as teorias e fatos mais gerais, e vai-se afunilando até se chegar ao problema a ser atacado no trabalho. Nesse agradecimento – que não tem formato definido, segundo as regras – eu fiz o processo inverso. Estou chegando então à base da pirâmide imaginária que me constitui.
+  Ao longo do meu treinamento como pesquisador eu aprendi que uma introdução deve ser estruturada como uma pirâmide invertida; começa-se com as teorias e fatos mais gerais, e vai-se afunilando até se chegar ao problema a ser atacado. Aqui  eu fiz o processo inverso. Estou chegando então à base da pirâmide imaginária que me constitui.
   
   Obrigado a minha família, por me proporcionar tantas vivências. E pelo apoio incondicional em (não) fazer escolhas que culminaram em quem eu sou. Obrigado ao meu pai, Gilberto, a minha mãe, Christina e a minha irmã, Manuela.
   
-  Recentemente li um agradecimento que dizia mais ou menos assim (tradução minha): “agradeço ao meu amor, sem a qual eu teria terminado esse livro muito mais rápido.” Acho que em um primeiro momento, a frase pode soar ofensiva, mas em seguida, penso que o que ela traz é que são as pessoas ao nosso lado que nos resgatam da obsessão pelo trabalho, que é tão nociva e parece ser um mal comum entre cientistas. E nos trazem de volta a vida. Agradeço imensamente a Julia, minha companheira. Que na realidade nunca fez meu trabalho ir mais devagar. Ao contrário, sempre me fez acreditar que tudo ia dar certo. E que me apoiou e incentivou. Mesmo quando eu fui pra longe. Mas que também me lembra sempre de que isso, o doutorado, a pesquisa, é apenas uma parte bem pequenininha de mim, de nós. Amo você Juquinha.
+  Recentemente li um agradecimento que dizia mais ou menos assim (tradução minha): “agradeço ao meu amor, sem a qual eu teria terminado esse livro muito mais rápido.” Acho que em um primeiro momento, a frase pode soar ofensiva, mas em seguida, penso que o real sentido é reconhecer nossas prioridades na vida. Agradeço imensamente a Julia, minha companheira. Que na realidade nunca fez meu trabalho ir mais devagar. Ao contrário, sempre me apoiou e incentivou. Mas que também me lembra de que isso, o doutorado, a pesquisa, é apenas uma parte bem pequenininha de mim, de nós. Amo você Juquinha.
   
  
-
     
 # If you prefer blank lines between paragraphs, un-silence lines  74-75 (this 
 #requires package tikz)
-header-includes:
-  - \usepackage{tikz}
+includes:
+  in_header: header.tex
+#  - \usepackage{tikz}
 # tentativas frustadas de layout paisagem
 #- \usepackage{lscape}
-  - \usepackage{pdflscape}
+#  - \usepackage{pdflscape}
 #- \newcommand{\blandscape}{\begin{landscape}}
 #- \newcommand{\elandscape}{\end{landscape}}
-  - \usepackage{typearea}
+#  - \usepackage{typearea}
 #- \usepackage{dcolumn}
 # acentos
-  - \usepackage[portuges]{babel}
+#  - \usepackage[portuges]{babel}
 ---
 
 <!--
