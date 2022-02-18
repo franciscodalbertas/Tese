@@ -24,7 +24,7 @@ If you feel it necessary to include an appendix, it goes here.
 
 \beginsupplement
 
-# Supplementary Material - Chapter 1 {#appendix-a}
+# Supplementary Material - Chapter 2 {#appendix-a}
 
 ## Calculating opportunity cost
 
@@ -153,18 +153,6 @@ knitr::include_graphics("figure/figS8.jpg")
 
 ```
 
-
-
-# Supplementary Material - Chapter 2  {#appendix-b}
-
-## Details on models construction and selection
-
-<!--
-reset counting and rename figures and tables
-* ainda tem um erro, aparece parte do codigo
-
--->
-
 \newcommand{\beginsupplement2}{
   \setcounter{table}{0}  
   \renewcommand{\thetable}{B\arabic{table}} 
@@ -173,6 +161,25 @@ reset counting and rename figures and tables
 }
 
 \beginsupplement2
+
+# Supplementary Material - Chapter 3  {#appendix-b}
+
+## Details on models construction and selection
+
+<!--
+reset counting and rename figures and tables
+* ainda tem um erro, aparece parte do codigo
+
+\newcommand{\beginsupplement2}{
+  \setcounter{table}{0}  
+  \renewcommand{\thetable}{B\arabic{table}} 
+  \setcounter{figure}{0} 
+  \renewcommand{\thefigure}{B\arabic{figure}}
+}
+
+-->
+
+
 
 
 
@@ -340,6 +347,109 @@ kbl(sb,caption="Comparison among the final models tested. We compared the estima
 
 ```
 
+
+\newcommand{\beginsupplement2}{
+  \setcounter{table}{0}  
+  \renewcommand{\thetable}{C\arabic{table}} 
+  \setcounter{figure}{0} 
+  \renewcommand{\thefigure}{C\arabic{figure}}
+}
+
+\beginsupplement2
+
+# Supplementary Material - Chapter 4  {#appendix-c}
+
+## Supplementary Figures
+
+```{r figurec1, out.width = "100%",echo=FALSE,fig.cap="Balance between matching covariates for properties within the Atlantic Forest. The farms were divided in large (267 - 8761 ha), medium (64  ha– 974 ha) and small farms (0.5 ha – 260 ha). Size ranges for small, medium or large properties are defined by the government at the municipal level, in accordance with intrinsic characteristics of the region. For this reason, there are overlaps between categories. The accumulated deforestation and regeneration are the sum of the deforestation and regeneration ratios between 2004-2009. The farms were also divided on the ones with no Legal Reserve (LR) and the ones with LR. We have also treated the proportion of pasture as categorical, using a threshold of 0.25 to divide them into low and high pasture proportion. The APP proportion is the proportion of  the farm’s area covered with areas of permanent protection. .", fig.align='center'}
+
+knitr::include_graphics("figure/sup_smd_ma.jpeg")
+
+
+
+
+```
+
+
+```{r figurec2, out.width = "100%",echo=FALSE,fig.cap="Balance between matching covariates for properties within the Cerrado. The farms were divided in large (267 - 8761 ha), medium (64  ha– 974 ha) and small farms (0.5 ha – 260 ha). Size ranges for small, medium or large properties are defined by the government at the municipal level, in accordance with intrinsic characteristics of the region. For this reason, there are overlaps between categories. The accumulated deforestation and regeneration are the sum of the deforestation and regeneration ratios between 2004-2009. The farms were also divided on the ones with no Legal Reserve (LR) and the ones with LR. We have also treated the proportion of pasture as categorical, using a threshold of 0.25 to divide them into low and high pasture proportion. The APP proportion is the proportion of  the farm’s area covered with areas of permanent protection. .", fig.align='center'}
+
+knitr::include_graphics("figure/sup_smd_ce.jpeg")
+
+
+
+
+```
+
+
+```{r figurec3, out.width = "50%",echo=FALSE,fig.cap="Exploratory annual trends for the proportion of vegetation cover at certified and non-certified properties. The distribution of values is illustrated by the grey dots and the average annual value by the red and blue dots, for non-certified and certified farms, respectively. The yellow shade is delimited by the minimum and median certification dates.", fig.align='center'}
+
+knitr::include_graphics("figure/descriptive_figure_comfaixa_pveg.jpeg")
+
+
+
+
+```
+
+
+```{r figurec4, out.width = "100%",echo=FALSE,fig.cap="Average group-time treatment effect for properties within the Atlantic Forest, considering an anticipation effect of one year. The red dots show the point estimates and 95 \\% confidence bands for the period pre-treatment. The blue dots show the point estimates and 95 \\% confidence bands for the period post-treatment. The figure shows the average effect in deforestation (a), natural regeneration (b), and in the vegetation deficit outside APPs (c). The x-axis represents the certification time: negative values are years before the certification and positive values are years after the certification, which is represented in time zero. Confidence bands crossing the zero on the y axis (red dotted line) are non-significant. Positive values mean that the treatment had a positive effect and negative values the opposite.", fig.align='center'}
+
+knitr::include_graphics("figure/panel_antic_1year_ma.jpeg")
+
+
+
+
+```
+
+
+```{r figurec5, out.width = "100%",echo=FALSE,fig.cap="Average group-time treatment effect for properties within the Atlantic Forest, considering an anticipation effect of two years. The red dots show the point estimates and 95 \\% confidence bands for the period pre-treatment. The blue dots show the point estimates and 95 \\% confidence bands for the period post-treatment. The figure shows the average effect in deforestation (a), natural regeneration (b), and in the vegetation deficit outside APPs (c). The x-axis represents the certification time: negative values are years before the certification and positive values are years after the certification, which is represented in time zero. Confidence bands crossing the zero on the y axis (red dotted line) are non-significant. Positive values mean that the treatment had a positive effect and negative values the opposite.", fig.align='center'}
+
+knitr::include_graphics("figure/panel_antic_2year_ma.jpeg")
+
+
+
+
+```
+
+
+
+```{r figurec6, out.width = "100%",echo=FALSE,fig.cap="Average group-time treatment effect for properties within the Atlantic Forest, considering an anticipation effect of three years. The red dots show the point estimates and 95 \\% confidence bands for the period pre-treatment. The blue dots show the point estimates and 95 \\% confidence bands for the period post-treatment. The figure shows the average effect in deforestation (a), natural regeneration (b), and in the vegetation deficit outside APPs (c). The x-axis represents the certification time: negative values are years before the certification and positive values are years after the certification, which is represented in time zero. Confidence bands crossing the zero on the y axis (red dotted line) are non-significant. Positive values mean that the treatment had a positive effect and negative values the opposite.", fig.align='center'}
+
+knitr::include_graphics("figure/panel_antic_3year_ma.jpeg")
+
+
+
+
+```
+
+
+
+```{r figurec7, out.width = "100%",echo=FALSE,fig.cap="Average group-time treatment effect for properties within the Cerrado, considering an anticipation effect of one year. The red dots show the point estimates and 95 \\% confidence bands for the period pre-treatment. The blue dots show the point estimates and 95 \\% confidence bands for the period post-treatment. The figure shows the average effect in deforestation (a), natural regeneration (b), the vegetation deficit outside APPs (c), and the proportion of APP covered with natural vegetation between certified and non-certified farms. The x-axis represents the certification time: negative values are years before the certification and positive values are years after the certification, which is represented in time zero. Confidence bands crossing the zero on the y axis (red dotted line) are non-significant. Positive values mean that the treatment had a positive effect and negative values the opposite.", fig.align='center'}
+
+knitr::include_graphics("figure/panel_antic_1year_ce.jpeg")
+
+
+
+
+```
+
+
+```{r figurec8, out.width = "100%",echo=FALSE,fig.cap="Average group-time treatment effect for properties within the Cerrado, considering an anticipation effect of two years. The red dots show the point estimates and 95 \\% confidence bands for the period pre-treatment. The blue dots show the point estimates and 95 \\% confidence bands for the period post-treatment. The figure shows the average effect in deforestation (a), natural regeneration (b), the vegetation deficit outside APPs (c), and the proportion of APP covered with natural vegetation between certified and non-certified farms. The x-axis represents the certification time: negative values are years before the certification and positive values are years after the certification, which is represented in time zero. Confidence bands crossing the zero on the y axis (red dotted line) are non-significant. Positive values mean that the treatment had a positive effect and negative values the opposite.", fig.align='center'}
+
+knitr::include_graphics("figure/panel_antic_2year_ce.jpeg")
+
+
+
+
+```
+
+```{r figurec9, out.width = "100%",echo=FALSE,fig.cap="Average group-time treatment effect for properties within the Cerrado, considering an anticipation effect of three years. The red dots show the point estimates and 95 \\% confidence bands for the period pre-treatment. The blue dots show the point estimates and 95 \\% confidence bands for the period post-treatment. The figure shows the average effect in deforestation (a), natural regeneration (b), the vegetation deficit outside APPs (c), and the proportion of APP covered with natural vegetation between certified and non-certified farms. The x-axis represents the certification time: negative values are years before the certification and positive values are years after the certification, which is represented in time zero. Confidence bands crossing the zero on the y axis (red dotted line) are non-significant. Positive values mean that the treatment had a positive effect and negative values the opposite.", fig.align='center'}
+
+knitr::include_graphics("figure/panel_antic_3year_ce.jpeg")
+
+
+
+
+```
 
 
 `r if(knitr:::is_latex_output()) '\\eapendices'`
