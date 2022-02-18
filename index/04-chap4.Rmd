@@ -20,9 +20,13 @@ Placeholeder: Ainda vou trabalhar no texto
 
 ## Introduction
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 ## Methods
 
-```{r Figure3_1, echo=FALSE, out.width = "100%", fig.cap="Spatial and temporal distribution of certified farms. (a) Distribution of farms per municipality across southern Atlantic Forest and Cerrado biomes; (b) number of certified farms per contract; (c) period under certification per contract from 2009 to 2020."}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+```{r Figure3.1, echo=FALSE, out.width = "100%", fig.cap="Spatial and temporal distribution of certified farms. (a) Distribution of farms per municipality across southern Atlantic Forest and Cerrado biomes; (b) number of certified farms per contract; (c) period under certification per contract from 2009 to 2020."}
 
 library(knitr)
 
@@ -30,3 +34,41 @@ include_graphics("figure/study_site2.jpg")
 
 
 ```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+### Certification requirements
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+
+### Constructing counterfactuals
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+```{r , echo=FALSE, warning=FALSE, message=FALSE}
+
+tabela_matching <- read.csv("data/variaveis_matching.csv",sep = ";")
+
+library(kableExtra)
+library(xtable)
+#names(tabela)[c(2,3)] <- c("Data generation","Question")
+
+kbl(tabela_matching, format ="latex",caption = "Set of covariates used in the matching procedure to identify control farms. The table contains the variable’s name, how it was calculated, and the reason why it was induced in the model. APP – areas of permanent protection.",booktabs = T,"pipe",longtable=T) %>%
+column_spec( 2, width = "3cm") %>%
+column_spec( 1, width = "3cm")  %>%
+column_spec( 3, width = "7cm")  %>%
+kable_styling(latex_options = c("repeat_header")) %>%
+kable_styling(latex_options = c("hold_position")) %>%
+footnote(c("* Size ranges for small, medium or large properties are defined by the government", "at the municipal level,in accordance with intrinsic characteristics of the region",". For this reason, there are overlaps between categories."))
+  
+
+```
+ 
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ 
+### Panel data
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
