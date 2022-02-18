@@ -72,3 +72,52 @@ footnote(c("* Size ranges for small, medium or large properties are defined by t
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+## Results
+
+```{r Figure3.2, echo=FALSE, out.width = "100%", fig.cap="Exploratory annual trends for certified and non-certified properties. Annual deforestation rate (a), regeneration rate (b), vegetation deficit outside APPs(c), and proportion of APP covered with natural vegetation. The distribution of values is illustrated by the gray dots and the average annual value by the red and blue dots, for non-certified and certified farms, respectively. The yellow shade is delimited by the minimum and median certification dates."}
+
+include_graphics("figure/descriptive_figure_comfaixa_deficit.jpeg")
+
+
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+```{r Figure3.3, echo=FALSE, out.width = "100%", fig.cap="Average group-time treatment effect for properties within the Atlantic Forest. The red dots show the point estimates and 95 \\% confidence bands for the period pre-treatment. The blue dots show the point estimates and 95 \\% confidence bands for the period post-treatment. The figure shows the average effect in deforestation (a), natural regeneration (b), the vegetation deficit outside APPs (c), and the proportion of APP covered with natural vegetation between certified and non-certified farms (d). The x-axis represents the certification time: negative values are years before the certification and positive values are years after the certification, which is represented in time zero. Confidence bands crossing the zero on the y axis (red dotted line) are non-significant. Positive values mean that the treatment had a positive effect and negative values the opposite."}
+
+include_graphics("figure/panel_regression_results_ma_deficit.jpeg")
+
+
+```
+
+
+
+
+
+
+```{r Figure3.4, echo=FALSE, out.width = "100%", fig.cap="Average group-time treatment effect for properties within the Cerrado. The red dots show the point estimates and 95 \\% confidence bands for the period pre-treatment. The blue dots show the point estimates and 95 \\% confidence bands for the period post-treatment. The figure shows the average effect in deforestation (a), natural regeneration (b), the vegetation deficit outside APPs (c), and the proportion of APP covered with natural vegetation between certified and non-certified farms (d). The x-axis represents the certification time: negative values are years before the certification and positive values are years after the certification, which is represented in time zero. Confidence bands crossing the zero on the y axis (red dotted line) are non-significant. Positive values mean that the treatment had a positive effect and negative values the opposite."}
+
+include_graphics("figure/panel_regression_results_ce_deficit.jpeg")
+
+
+```
+
+
+
+```{r Figure3.5, echo=FALSE, out.width = "45%", fig.cap="APP vegetation average group-time treatment effect for properties within the Atlantic Forest, considering an anticipation effect. The red dots show the point estimates and 95 \\% confidence bands for the period pre-treatment. The blue dots show the point estimates and 95 \\% confidence bands for the period post-treatment. To account for an anticipation effect, instead of entering the real certification date on the model, we considered time zero as: certification date minus one year (a); certification date minus two years (b); and certification date minus three years (c). The x-axis represents the certification time: negative values are years before the certification and positive values are years after the certification, which is represented in time zero. Confidence bands crossing the zero on the y axis (red dotted line) are non-significant. Positive values mean that the treatment had a positive effect and negative values the opposite."}
+
+include_graphics("figure/panel_antic_apps_ma.jpeg")
+
+
+```
+
+
+## Discussion
+
+### Certification in consolidated agricultural landscapes   as a tool to achieve conservation targets: findings and limitations
+
+### Potential synergies between certification and environmental compliance
+
+### Extending certification benefits
+
+### Conclusion
