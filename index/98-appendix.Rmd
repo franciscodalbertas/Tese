@@ -327,13 +327,13 @@ names(sv) <- c("M",	"Int.",	"100",	"200",	"300",	"400","500", "600"	, "700",	"80
 
 library(kableExtra)
 
-# kbl(sv,format="latex" ,caption = "AIC table for the landscape variables tested to build the yield model. Models (M) are ranked by their likelihood for each variable tested (proportion of coffee, coffee-forest edges and proportion of forests). The variables were calculated on a multiscale circular buffer surrounding the coffee fields, ranging from 100-1000 meteres. Models with lower AIC were considered more plausible. Df – degrees of freedom; logLik – log likelihood; AIC – Akaike Information Criteria; delta is the diferrence between the AIC of the first ranked model and the rest. ",booktabs=T)%>%
-# #kable_styling(latex_options = "striped") %>%
-#  kable_styling(latex_options = c("hold_position","scale_down")) #%>%
-#  #landscape()
+kbl(sv,format="latex" ,caption = "AIC table for the landscape variables tested to build the yield model. Models (M) are ranked by their likelihood for each variable tested (proportion of coffee, coffee-forest edges and proportion of forests). The variables were calculated on a multiscale circular buffer surrounding the coffee fields, ranging from 100-1000 meteres. Models with lower AIC were considered more plausible. Df – degrees of freedom; logLik – log likelihood; AIC – Akaike Information Criteria; delta is the diferrence between the AIC of the first ranked model and the rest. ",booktabs=T)%>%
+#kable_styling(latex_options = "striped") %>%
+ kable_styling(latex_options = c("hold_position","scale_down")) #%>%
+ #landscape()
 
 
-landscape(knitr::kable(sv, "latex"))
+
 
 ```
 
@@ -512,6 +512,351 @@ footnote(c("* Size ranges for small, medium or large properties are defined by t
 
 ```
  
+```{r , echo=FALSE, warning=FALSE, message=FALSE}
+
+library(readxl)
+library(dplyr)
+
+acc <- read_xlsx("data/acuracia.xlsx") %>% 
+  mutate_all(na_if,"")
+
+acc$accurary <- round(acc$accurary,2)
+
+
+names(acc)[4] <- "accuracy(%)"
+
+acc$`correct classification` <- round(acc$`correct classification`,0)
+
+
+library(kableExtra)
+library(xtable)
+#names(tabela)[c(2,3)] <- c("Data generation","Question")
+options(knitr.kable.NA = '')
+
+kbl(acc, format ="latex",caption = "Accuracy results  of the land-use and land-cover classification at the property level. We generated 168 random points within the boundaries of the certified farms. Then, we performed a visual analysis comparing the Mapbiomas collection 5 classification with a RGB composition with Landsat TM 5 bands for the year 2007. When in doubt, we also used satellite images from Google Earth.",booktabs = T,longtable=T) %>%
+# column_spec( 2, width = "2cm") %>%
+# column_spec( 1, width = "4cm") %>%
+# column_spec( 3, width = "2cm") %>%
+# column_spec( 4, width = "2cm") %>%
+# column_spec( 5, width = "2cm") %>%
+kable_styling(latex_options = c("repeat_header","hold_position"),position = "center") 
+
+
+```
+ 
+\newpage
+
+```{r echo=FALSE, warning=FALSE, message=FALSE,fig.align='center'}
+
+library(readxl)
+library(dplyr)
+
+result_desmatamento_ma <- read_xlsx("data/desm_ma_pd.xlsx") %>% 
+  mutate_all(na_if,"")
+
+names(result_desmatamento_ma)[4:5] <-c("2.5%","97.5%") 
+
+library(kableExtra)
+library(xtable)
+#names(tabela)[c(2,3)] <- c("Data generation","Question")
+options(knitr.kable.NA = '')
+
+kbl(result_desmatamento_ma, format ="latex",caption = "Deforestation average group-time treatment effect for properties within the Atlantic Forest: average treatment effect (ATT), standard error and the confidence error band aggregated by the length of exposure to certification (event time). Negative event time values represent the length in years before the certification and positive values the length in years after the certification. (*) – confidence band do not overlap zero.",booktabs = T,longtable=T) %>%
+# column_spec( 2, width = "2cm") %>%
+# column_spec( 1, width = "4cm") %>%
+# column_spec( 3, width = "2cm") %>%
+# column_spec( 4, width = "2cm") %>%
+# column_spec( 5, width = "2cm") %>%
+kable_styling(latex_options = c("repeat_header","hold_position"),position = "center") 
+
+
+```
+ 
+ 
+ 
+```{r echo=FALSE, warning=FALSE, message=FALSE,fig.align='center'}
+
+library(readxl)
+library(dplyr)
+
+result_desmatamento_ce <- read_xlsx("data/desm_ce_pd.xlsx") %>% 
+  mutate_all(na_if,"")
+
+names(result_desmatamento_ce)[4:5] <-c("2.5%","97.5%") 
+
+library(kableExtra)
+library(xtable)
+#names(tabela)[c(2,3)] <- c("Data generation","Question")
+options(knitr.kable.NA = '')
+
+kbl(result_desmatamento_ma, format ="latex",caption = "Deforestation average group-time treatment effect for properties within the Cerrado: average treatment effect (ATT), standard error and the confidence error band aggregated by the length of exposure to certification (event time). Negative event time values represent the length in years before the certification and positive values the length in years after the certification. (*) – confidence band do not overlap zero.",booktabs = T,longtable=T) %>%
+# column_spec( 2, width = "2cm") %>%
+# column_spec( 1, width = "4cm") %>%
+# column_spec( 3, width = "2cm") %>%
+# column_spec( 4, width = "2cm") %>%
+# column_spec( 5, width = "2cm") %>%
+kable_styling(latex_options = c("repeat_header","hold_position"),position = "center") 
+
+
+```
+ 
+
+```{r echo=FALSE, warning=FALSE, message=FALSE,fig.align='center'}
+
+library(readxl)
+library(dplyr)
+
+result_reg_ma <- read.csv("data/reg_ma_pd.csv",sep=";") %>% 
+  mutate_all(na_if,"")
+
+names(result_reg_ma) <-c("event time"," ATT","standard error","2.5%","97.5%") 
+
+library(kableExtra)
+library(xtable)
+#names(tabela)[c(2,3)] <- c("Data generation","Question")
+options(knitr.kable.NA = '')
+
+kbl(result_reg_ma, format ="latex",caption = "Regeneration average group-time treatment effect for properties within the Atlantic Forest: average treatment effect (ATT), the standard error and the confidence error band aggregated by the length of exposure to certification (event time). Negative event time values represent the length in years before the certification and positive values the length in years after the certification. (*) – confidence band do not overlap zero.",booktabs = T,longtable=T) %>%
+# column_spec( 2, width = "2cm") %>%
+# column_spec( 1, width = "4cm") %>%
+# column_spec( 3, width = "2cm") %>%
+# column_spec( 4, width = "2cm") %>%
+# column_spec( 5, width = "2cm") %>%
+kable_styling(latex_options = c("repeat_header","hold_position"),position = "center") 
+
+
+```
+ 
+```{r echo=FALSE, warning=FALSE, message=FALSE,fig.align='center'}
+
+library(readxl)
+library(dplyr)
+
+result_reg_ce <- read.csv("data/reg_ce_pd.csv",sep=";") %>% 
+  mutate_all(na_if,"")
+
+names(result_reg_ce) <-c("event time"," ATT","standard error","2.5%","97.5%") 
+
+library(kableExtra)
+library(xtable)
+#names(tabela)[c(2,3)] <- c("Data generation","Question")
+options(knitr.kable.NA = '')
+
+kbl(result_reg_ce, format ="latex",caption = "Regeneration average group-time treatment effect for properties within the Cerrado: average treatment effect (ATT), the standard error and the confidence error band aggregated by the length of exposure to certification (event time). Negative event time values represent the length in years before the certification and positive values the length in years after the certification. (*) – confidence band do not overlap zero.",booktabs = T,longtable=T) %>%
+# column_spec( 2, width = "2cm") %>%
+# column_spec( 1, width = "4cm") %>%
+# column_spec( 3, width = "2cm") %>%
+# column_spec( 4, width = "2cm") %>%
+# column_spec( 5, width = "2cm") %>%
+kable_styling(latex_options = c("repeat_header","hold_position"),position = "center") 
+
+
+```
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE,fig.align='center'}
+
+library(readxl)
+library(dplyr)
+
+# result_def_ma <- read_xlsx("data/def_ma_pd.xlsx") %>% 
+#   mutate_all(na_if,"")
+
+result_def_ma <- read.csv("data/def_ma_pd.csv",sep=";") %>% 
+  mutate_all(na_if,"")
+
+names(result_def_ma) <-c("event time"," ATT","standard error","2.5%","97.5%") 
+
+library(kableExtra)
+library(xtable)
+#names(tabela)[c(2,3)] <- c("Data generation","Question")
+options(knitr.kable.NA = '')
+
+kbl(result_def_ma, format ="latex",caption = "Vegetation deficit average group-time treatment effect for properties within the Atlantic Forest: average treatment effect (ATT), the standard error and the confidence error band aggregated by the length of exposure to certification (event time). Negative event time values represent the length in years before the certification and positive values the length in years after the certification. (*) – confidence band do not overlap zero.",booktabs = T,longtable=T) %>%
+# column_spec( 2, width = "2cm") %>%
+# column_spec( 1, width = "4cm") %>%
+# column_spec( 3, width = "2cm") %>%
+# column_spec( 4, width = "2cm") %>%
+# column_spec( 5, width = "2cm") %>%
+kable_styling(latex_options = c("repeat_header","hold_position"),position = "center") 
+
+
+```
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE,fig.align='center'}
+
+library(readxl)
+library(dplyr)
+
+result_def_ce <- read.csv("data/def_ce_pd.csv",sep=";") %>% 
+  mutate_all(na_if,"")
+
+names(result_def_ce) <-c("event time"," ATT","standard error","2.5%","97.5%") 
+
+
+library(kableExtra)
+library(xtable)
+#names(tabela)[c(2,3)] <- c("Data generation","Question")
+options(knitr.kable.NA = '')
+
+kbl(result_def_ce, format ="latex",caption = "Vegetation deficit average group-time treatment effect for properties within the Cerrado: average treatment effect (ATT), the standard error and the confidence error band aggregated by the length of exposure to certification (event time). Negative event time values represent the length in years before the certification and positive values the length in years after the certification. (*) – confidence band do not overlap zero.",booktabs = T,longtable=T) %>%
+# column_spec( 2, width = "2cm") %>%
+# column_spec( 1, width = "4cm") %>%
+# column_spec( 3, width = "2cm") %>%
+# column_spec( 4, width = "2cm") %>%
+# column_spec( 5, width = "2cm") %>%
+kable_styling(latex_options = c("repeat_header","hold_position"),position = "center") 
+
+
+``` 
+
+```{r echo=FALSE, warning=FALSE, message=FALSE,fig.align='center'}
+
+library(readxl)
+library(dplyr)
+
+# result_def_ma <- read_xlsx("data/def_ma_pd.xlsx") %>% 
+#   mutate_all(na_if,"")
+
+result_app_ma <- read.csv("data/app_ma_pd.csv",sep=";") %>% 
+  mutate_all(na_if,"")
+
+names(result_app_ma) <-c("event time"," ATT","standard error","2.5%","97.5%") 
+
+library(kableExtra)
+library(xtable)
+#names(tabela)[c(2,3)] <- c("Data generation","Question")
+options(knitr.kable.NA = '')
+
+kbl(result_app_ma, format ="latex",caption = "Areas of permanent protection vegetation cover average group-time treatment effect for properties within the Atlantic Forest: average treatment effect (ATT), the standard error and the confidence error band aggregated by the length of exposure to certification (event time). Negative event time values represent the length in years before the certification and positive values the length in years after the certification. (*) – confidence band do not overlap zero.",booktabs = T,longtable=T) %>%
+# column_spec( 2, width = "2cm") %>%
+# column_spec( 1, width = "4cm") %>%
+# column_spec( 3, width = "2cm") %>%
+# column_spec( 4, width = "2cm") %>%
+# column_spec( 5, width = "2cm") %>%
+kable_styling(latex_options = c("repeat_header","hold_position"),position = "center") 
+
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE,fig.align='center'}
+
+library(readxl)
+library(dplyr)
+
+# result_def_ma <- read_xlsx("data/def_ma_pd.xlsx") %>% 
+#   mutate_all(na_if,"")
+
+result_app_ma <- read.csv("data/deficit_ma_APP_l1_pd.csv",sep=";") %>% 
+  mutate_all(na_if,"")
+
+names(result_app_ma) <-c("event time"," ATT","standard error","2.5%","97.5%") 
+
+library(kableExtra)
+library(xtable)
+#names(tabela)[c(2,3)] <- c("Data generation","Question")
+options(knitr.kable.NA = '')
+
+kbl(result_app_ma, format ="latex",caption = "Areas of permanent protection vegetation cover average group-time treatment effect for properties within the Atlantic Forest, considering an anticipation effect of one year: average treatment effect (ATT), the standard error and the confidence error band aggregated by the length of exposure to certification (event time). Negative event time values represent the length in years before the certification and positive values the length in years after the certification. (*) – confidence band do not overlap zero.",booktabs = T,longtable=T) %>%
+# column_spec( 2, width = "2cm") %>%
+# column_spec( 1, width = "4cm") %>%
+# column_spec( 3, width = "2cm") %>%
+# column_spec( 4, width = "2cm") %>%
+# column_spec( 5, width = "2cm") %>%
+kable_styling(latex_options = c("repeat_header","hold_position"),position = "center") 
+
+
+```
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE,fig.align='center'}
+
+library(readxl)
+library(dplyr)
+
+# result_def_ma <- read_xlsx("data/def_ma_pd.xlsx") %>% 
+#   mutate_all(na_if,"")
+
+result_app_ma <- read.csv("data/deficit_ma_APP_l2_pd.csv",sep=";") %>% 
+  mutate_all(na_if,"")
+
+names(result_app_ma) <-c("event time"," ATT","standard error","2.5%","97.5%") 
+
+library(kableExtra)
+library(xtable)
+#names(tabela)[c(2,3)] <- c("Data generation","Question")
+options(knitr.kable.NA = '')
+
+kbl(result_app_ma, format ="latex",caption = "Areas of permanent protection vegetation cover average group-time treatment effect for properties within the Atlantic Forest, considering an anticipation effect of two years: average treatment effect (ATT), the standard error and the confidence error band aggregated by the length of exposure to certification (event time). Negative event time values represent the length in years before the certification and positive values the length in years after the certification. (*) – confidence band do not overlap zero.",booktabs = T,longtable=T) %>%
+# column_spec( 2, width = "2cm") %>%
+# column_spec( 1, width = "4cm") %>%
+# column_spec( 3, width = "2cm") %>%
+# column_spec( 4, width = "2cm") %>%
+# column_spec( 5, width = "2cm") %>%
+kable_styling(latex_options = c("repeat_header","hold_position"),position = "center") 
+
+
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE,fig.align='center'}
+
+library(readxl)
+library(dplyr)
+
+# result_def_ma <- read_xlsx("data/def_ma_pd.xlsx") %>% 
+#   mutate_all(na_if,"")
+
+result_app_ma <- read.csv("data/deficit_ma_APP_l3_pd.csv",sep=";") %>% 
+  mutate_all(na_if,"")
+
+names(result_app_ma) <-c("event time"," ATT","standard error","2.5%","97.5%") 
+
+library(kableExtra)
+library(xtable)
+#names(tabela)[c(2,3)] <- c("Data generation","Question")
+options(knitr.kable.NA = '')
+
+kbl(result_app_ma, format ="latex",caption = "Areas of permanent protection vegetation cover average group-time treatment effect for properties within the Atlantic Forest, considering an anticipation effect of three years: average treatment effect (ATT), the standard error and the confidence error band aggregated by the length of exposure to certification (event time). Negative event time values represent the length in years before the certification and positive values the length in years after the certification. (*) – confidence band do not overlap zero.",booktabs = T,longtable=T) %>%
+# column_spec( 2, width = "2cm") %>%
+# column_spec( 1, width = "4cm") %>%
+# column_spec( 3, width = "2cm") %>%
+# column_spec( 4, width = "2cm") %>%
+# column_spec( 5, width = "2cm") %>%
+kable_styling(latex_options = c("repeat_header","hold_position"),position = "center") 
+
+
+```
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE,fig.align='center'}
+
+library(readxl)
+library(dplyr)
+
+# result_def_ma <- read_xlsx("data/def_ma_pd.xlsx") %>% 
+#   mutate_all(na_if,"")
+
+result_app_ce <- read.csv("data/app_ce_pd.csv",sep=";") %>% 
+  mutate_all(na_if,"")
+
+names(result_app_ce) <-c("event time"," ATT","standard error","2.5%","97.5%") 
+
+library(kableExtra)
+library(xtable)
+#names(tabela)[c(2,3)] <- c("Data generation","Question")
+options(knitr.kable.NA = '')
+
+kbl(result_app_ce, format ="latex",caption = "Areas of permanent protection vegetation cover average group-time treatment effect for properties within the Cerrado: average treatment effect (ATT), the standard error and the confidence error band aggregated by the length of exposure to certification (event time). Negative event time values represent the length in years before the certification and positive values the length in years after the certification. (*) – confidence band do not overlap zero.",booktabs = T,longtable=T) %>%
+# column_spec( 2, width = "2cm") %>%
+# column_spec( 1, width = "4cm") %>%
+# column_spec( 3, width = "2cm") %>%
+# column_spec( 4, width = "2cm") %>%
+# column_spec( 5, width = "2cm") %>%
+kable_styling(latex_options = c("repeat_header","hold_position"),position = "center") 
+
+
+```
 
 
 
