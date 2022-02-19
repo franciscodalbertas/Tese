@@ -327,13 +327,13 @@ names(sv) <- c("M",	"Int.",	"100",	"200",	"300",	"400","500", "600"	, "700",	"80
 
 library(kableExtra)
 
-kbl(sv, caption = "AIC table for the landscape variables tested to build the yield model. Models (M) are ranked by their likelihood for each variable tested (proportion of coffee, coffee-forest edges and proportion of forests). The variables were calculated on a multiscale circular buffer surrounding the coffee fields, ranging from 100-1000 meteres. Models with lower AIC were considered more plausible. Df – degrees of freedom; logLik – log likelihood; AIC – Akaike Information Criteria; delta is the diferrence between the AIC of the first ranked model and the rest. ",booktabs=T,format="latex")%>%
-#kable_styling(latex_options = "striped") %>%
- kable_styling(latex_options = c("hold_position","scale_down")) #%>%
-#  kableExtra::landscape()
+# kbl(sv,format="latex" ,caption = "AIC table for the landscape variables tested to build the yield model. Models (M) are ranked by their likelihood for each variable tested (proportion of coffee, coffee-forest edges and proportion of forests). The variables were calculated on a multiscale circular buffer surrounding the coffee fields, ranging from 100-1000 meteres. Models with lower AIC were considered more plausible. Df – degrees of freedom; logLik – log likelihood; AIC – Akaike Information Criteria; delta is the diferrence between the AIC of the first ranked model and the rest. ",booktabs=T)%>%
+# #kable_styling(latex_options = "striped") %>%
+#  kable_styling(latex_options = c("hold_position","scale_down")) #%>%
+#  #landscape()
 
 
-
+landscape(knitr::kable(sv, "latex"))
 
 ```
 
@@ -450,6 +450,69 @@ knitr::include_graphics("figure/panel_antic_3year_ce.jpeg")
 
 
 ```
+
+## Supplementary Tables
+
+```{r , echo=FALSE, warning=FALSE, message=FALSE}
+
+library(readxl)
+library(dplyr)
+
+matching_ma <- read_xlsx("data/matching_ma.xlsx") %>% 
+  mutate_all(na_if,"")
+
+matching_ma[,2:4] <- round(matching_ma[,2:4],4)
+
+library(kableExtra)
+library(xtable)
+#names(tabela)[c(2,3)] <- c("Data generation","Question")
+options(knitr.kable.NA = '')
+
+kbl(matching_ma, format ="latex",caption = "Covariates mean values and standard mean difference before (unmatched) and after the matching procedure (matching) for properties at the Atlantic Forest. The farms were divided in large (267 - 8761 ha), medium (64  ha– 974 ha) and small farms (0.5 ha – 260 ha)*. The accumulated deforestation and regeneration are the sum of the deforestation and regeneration ratios between 2004-2009. The farms were also divided on the ones with no Legal Reserve (LR) and the ones with LR. We have also treated the proportion of pasture as categorical, using a threshold of 0.25 to divide them into low and high pasture proportion. The APP proportion is the proportion of the farm’s area covered with areas of permanent protection.",booktabs = T,longtable=T) %>%
+column_spec( 2, width = "2cm") %>%
+column_spec( 1, width = "4cm") %>%
+column_spec( 3, width = "2cm") %>%
+column_spec( 4, width = "2cm") %>%
+column_spec( 5, width = "2cm") %>%
+kable_styling(latex_options = c("repeat_header","hold_position")) %>%
+footnote(c("* Size ranges for small, medium or large properties are defined by the government", "at the municipal level,in accordance with intrinsic characteristics of the region",". For this reason, there are overlaps between categories."))
+
+
+
+
+```
+ 
+
+```{r , echo=FALSE, warning=FALSE, message=FALSE}
+
+library(readxl)
+library(dplyr)
+
+matching_ma <- read_xlsx("data/matching_ce.xlsx") %>% 
+  mutate_all(na_if,"")
+
+matching_ma[,2:4] <- round(matching_ma[,2:4],4)
+
+library(kableExtra)
+library(xtable)
+#names(tabela)[c(2,3)] <- c("Data generation","Question")
+options(knitr.kable.NA = '')
+
+kbl(matching_ma, format ="latex",caption = "Covariates mean values and standard mean difference before (unmatched) and after the matching procedure (matching) for properties at the Cerrado. The farms were divided in large (267 - 8761 ha), medium (64  ha– 974 ha) and small farms (0.5 ha – 260 ha)*. The accumulated deforestation and regeneration are the sum of the deforestation and regeneration ratios between 2004-2009. The farms were also divided on the ones with no Legal Reserve (LR) and the ones with LR. We have also treated the proportion of pasture as categorical, using a threshold of 0.25 to divide them into low and high pasture proportion. The APP proportion is the proportion of the farm’s area covered with areas of permanent protection.",booktabs = T,longtable=T) %>%
+column_spec( 2, width = "2cm") %>%
+column_spec( 1, width = "4cm") %>%
+column_spec( 3, width = "2cm") %>%
+column_spec( 4, width = "2cm") %>%
+column_spec( 5, width = "2cm") %>%
+kable_styling(latex_options = c("repeat_header","hold_position")) %>%
+footnote(c("* Size ranges for small, medium or large properties are defined by the government", "at the municipal level,in accordance with intrinsic characteristics of the region",". For this reason, there are overlaps between categories."))
+
+
+
+
+```
+ 
+
 
 
 `r if(knitr:::is_latex_output()) '\\eapendices'`
