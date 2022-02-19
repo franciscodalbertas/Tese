@@ -18,6 +18,12 @@ $~$
 
 Placeholeder: Ainda vou trabalhar no texto
 
+\begin{flushleft}
+
+\textbf{Keywords}: Native Vegetation Protection law, Forest code, Cerrado, Atlantic Forest, Sustainable agriculture
+
+\end{flushleft}
+
 ## Introduction
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -57,7 +63,7 @@ library(xtable)
 
 kbl(tabela_matching, format ="latex",caption = "Set of covariates used in the matching procedure to identify control farms. The table contains the variable’s name, how it was calculated, and the reason why it was induced in the model. APP – areas of permanent protection.",booktabs = T,"pipe",longtable=T) %>%
 column_spec( 2, width = "3cm") %>%
-column_spec( 1, width = "3cm")  %>%
+column_spec( 1, width = "4cm")  %>%
 column_spec( 3, width = "7cm")  %>%
 kable_styling(latex_options = c("repeat_header")) %>%
 kable_styling(latex_options = c("hold_position")) %>%
