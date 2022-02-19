@@ -20,7 +20,6 @@ Zago de Almeida Paciello, Martine Maron, Jean Paul Metzger
 
 \end{flushleft}
 
-$~$
 
 \begin{flushleft}
 
@@ -38,13 +37,13 @@ d’ALBERTAS, F. et al. Private reserves suffer from the same location biases of
 
 $~$
 
-\begin{flushleft}
+```{r, echo=FALSE, out.width = "100%", fig.cap="Graphical abstract",  fig.pos="H"}
 
-**key-words:** Private-land conservation, Land-regulation, Environmental policy, Forest code, Natural Vegetation Protection Law, Atlantic Forest, Governance
+include_graphics("figure/graphical_abstract_v07-02.png")
 
-\end{flushleft}
 
-$~$
+```
+
 
 
 ## Abstract
@@ -55,7 +54,7 @@ Setting aside areas for conservation on private properties is an essential compo
 \begin{flushleft}
 
 \textbf{Keywords}: private-land conservation,land-regulation,environmental policy, Forest Code,
-  Natural Vegetation Protection Law, Atlantic Forest
+  Native Vegetation Protection Law, Atlantic Forest
 
 \end{flushleft}
 
