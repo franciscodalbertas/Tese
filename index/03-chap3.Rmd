@@ -10,7 +10,7 @@ Camila Hohlenwerger, Jean Paul Metzger
 \end{flushleft}
 
 $~$
-$~$
+
 
 \begin{flushleft}
 
@@ -21,12 +21,18 @@ consideration by the editor. **Date: include date on the latest status!**
 
 
 $~$
-$~$
+
 
 
 ## Abstract
 
 Restoration is a critical tool for reversing biodiversity declines and mitigating climate change. However, it is a costly intervention. Where restoration provides significant financial benefits, such as by increasing crop yield or providing carbon credits, these costs may be offset. Focusing on a restoration hotspot in the Brazilian Atlantic Forest, we develop restoration scenarios and calculate estimations of their financial balance to understand conditions where restoration costs might be compensated by yield and carbon credit-derived benefits. Our study suggests that restoration costs can be offset by yield increases when farms already have >10% forest cover and restoration targets are below 25% forest cover. Current $CO_2$ price is not sufficient in offsetting net costs for higher restoration targets. A carbon value of 35-124 USD/ton would be required to promote restoration. The identification of balanced financial conditions, that create landscapes suitable for biodiversity conservation, climate mitigation, and agricultural production, has broader implications and is strategic to scale up restoration.  
+
+\begin{flushleft}
+
+\textbf{Keywords}: Cost-benefit analysis, Forest Code, Natural Vegetation Protection Law, Atlantic Forest, Ecosystem services
+
+\end{flushleft}
 
 ## Introduction
 
