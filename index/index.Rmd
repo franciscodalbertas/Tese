@@ -31,12 +31,12 @@ knit: "bookdown::render_book"
 site: bookdown::bookdown_site
 output: 
   ufscdown::thesis_pdf:
-   
     citation_package: biblatex
     bib_engine: biber
     fig_caption: yes
     extra_dependencies:
       babel: [portuges]
+      
 #  ufscdown::thesis_word: default    
 # apagar isso, era tentativa de mudar orientacao
 #    includes: 
@@ -52,10 +52,10 @@ lan: en
 # 42-59 in this YAML header.
 abstract: |
   
-  Criar resumo direto no arquivo principal. Acentos não funcionam usando arquivo externo.
+  A expansão e a intensificação agrícola estão entre as principais ameaças à biodiversidade e para a provisão de serviços ecossistêmicos. Neste contexto, a conservação e restauração de áreas naturais dentro de propriedades rurais aparecem como importantes medidas de mitigação.  De modo complementar, formas alternativas de manejo agrícola também podem ser adotadas para uma produção mais sustentável, como é o caso das certificações agrícolas. Em troca de seguir um conjunto de boas práticas, propriedades que adotam a certificação recebem um selo certificando sua adesão. Diante desse quadro, essa tese tem como objetivo contribuir no entendimento de caminhos para uma agricultura mais sustentável, seja através de um planejamento adequado das ações de conservação e restauração dentro de propriedades privadas, utilizando o contexto do atendimento à legislação ambiental, e pela avaliação rigorosa da efetividade de ações de certificação para a conservação no Brasil. No capítulo 1, buscamos compreender quais os principais fatores associados à alocação de reservas de vegetação em propriedades rurais. A legislação exige dos proprietários entre 20 e 80% da área de suas propriedades para vegetação natural, o que é denominado como Reserva Legal. Caso não possuam essa área vegetada, os proprietários devem restaurar ou compensar uma área equivalente fora da propriedade. Além disso, áreas sensíveis, como topos de morro e matas ripárias são denominadas áreas de preservação permanente (APP) e devem obrigatoriamente ser restauradas e conservadas.  Cabe aos proprietários definir a localização e o arranjo espacial das Reservas Legais, afetando a capacidade dessas reservas em manter a biodiversidade e prover serviços ecossistêmicos. Utilizando dados de mais de 3.600 propriedades, encontramos que as decisões de alocação de Reserva Legal são tomadas de modo a maximizar os ganhos com a propriedade e reduzir custos com restauração. Esse padrão é similar ao encontrado para áreas protegidas públicas, localizadas em regiões economicamente marginais. Estas áreas não necessariamente tem o maior potencial de biodiversidade e provisão de serviços ecossistêmicos, sugerindo que intervenções de governança podem ser necessárias para maximizar os benefícios da alocação de Reservas Legais. Nesse sentido, no capítulo 2, para dar suporte a decisões melhores por parte dos proprietários, fizemos uma análise detalhada dos custos de restaurar áreas agrícolas, mas também dos potenciais benefícios, como o incremento na produtividade por meio do aumento na provisão de serviços como polinização, controle natural de pragas e regulação climática. Focando em um “hotspot” global de restauração, a Mata Atlântica, desenvolvemos uma série de cenários futuros em fazendas de café para compreender em que situações os custos poderiam ser balanceados por benefícios derivados de serviços ecossistêmicos e pela geração de créditos de carbono. Nossos resultados sugerem que os custos podem ser compensados pelo aumento de produtividade quando as propriedades já têm 10% de vegetação nativa e a área final de vegetação se limita a 25% do total da propriedade. Além disso, verificamos que os valores atuais praticados no mercado de carbono não são suficientes para compensar os custos líquidos para metas de restauração mais ambiciosas. Identificar situações que conciliam paisagens biodiversas, mitigação climática e produção agrícola tem amplas implicações para o manejo agrícola e para que a restauração ecológica de paisagens agrícolas ganhe escala. Finalmente, no capítulo 3, investigamos se a certificação agrícola tem efeitos quantificáveis para a conservação.  Apesar do crescimento das áreas certificadas, estabelecer uma relação direta entre a certificação e benefícios ambientais decorrentes ainda é uma questão em aberto. Utilizamos o banco de dados de uma das principais certificadoras de café do Brasil e realizamos uma análise robusta dos impactos da certificação para a redução do desmatamento, aumento da regeneração e para o cumprimento da legislação ambiental.  Não encontramos um efeito direto da certificação sobre o desmatamento e a regeneração de vegetação nativa, nem para a alocação de Reserva Legal dentro das propriedades. Entretanto, propriedades certificadas estão recuperando mais suas áreas de APP, o que demonstra uma sinergia entre ferramentas não governamentais e o cumprimento da lei. Benefícios ainda maiores poderiam ser atingidos em locais com governança mais fraca, como fronteiras agrícolas ou países de baixa renda. Além disso, há espaço para expandir os benefícios mesmo em áreas consolidadas, usando a certificação como uma ferramenta facilitadora da adoção da legislação ambiental de modo ainda mais amplo, como no caso do incentivo à alocação de Reservas Legais dentro das propriedades em detrimento de compensação fora. Os resultados contribuem para o ainda limitado número de estudos focando na efetividade da certificação para a conservação. Em conclusão, essa tese contribui para a melhor compreensão da adoção da legislação ambiental por proprietários rurais, os custos e benefícios envolvidos, bem como na efetividade de ferramentas alternativas às medidas de comando-e-controle para promover a sustentabilidade agrícola, como é o caso da certificação.
 
 
-palavras-chave: [Palavra-chave 1, Palavra-chave 2]
+palavras-chave: [Agricultura sustentável, Política ambiental, Governança, Serviços ecossistêmcios, Restauração]
 foreignabstract: |
   `r if(knitr:::is_latex_output()) paste(readLines("00-foreignabstract.Rmd"), 
   collapse = '\n  ')`
@@ -67,7 +67,7 @@ epigrafe: |
   | "Talvez tenha chegado a hora de superar a esperança.[...]Talvez tenha chegado o momento de compreender que, diante de tal conjuntura, é preciso fazer o muito mais difícil: criar/lutar mesmos sem esperança. O que vai costurar os rasgos do Brasil não é a esperança, mas a nossa capacidade de enfrentar os conflitos mesmo quando sabemos que vamos perder."   
   | (Eliane Brum, Banzeiro Òkòtó)
 # Specify the location of the bibliography below
-bibliography: ["bib/ch1.bib", "bib/references.bib", "bib/pkgs.bib"]
+bibliography: ["bib/biblioteca.bib", "bib/references.bib", "bib/pkgs.bib"]
 link-citations: yes
 dedication: |
   | para Julia, pela paciência
