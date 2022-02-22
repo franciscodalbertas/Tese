@@ -1,4 +1,4 @@
-# Agricultural certification as a complementary tool for governance: How to do better?
+# Agricultural certification as a complementary tool for environmental law compliance
 
 
 
@@ -16,7 +16,7 @@ $~$
 
 ## Abstract
 
-Placeholeder: Ainda vou trabalhar no texto
+Agricultural sustainable standards are an important strategy to reduce commodities pressures on biodiversity. Despite the global expanding areas under certification and the mounting evidence of the positive socioeconomic outcomes, conservation benefits derived from certification are less clear. Here we have applied a robust counterfactual approach with before-after-control impact evaluation to explore those environmental benefits in one of the largest coffee producing areas in the world, located in southern Brazil. Specifically, we evaluated within a group of over 500 certified farms whether the adoption of certification affected native vegetation regeneration and deforestation, the farm’s proportion of vegetation deficit (the required area to achieve legal compliance), and the proportion of vegetation in what is considered as sensitive areas by local legislation (that needs to be compulsorily protected). We did not detect certification-derived effects on the natural vegetation cover deficit and on deforestation and regeneration rates, which were marginal, both for certified and non-certified farms. However, we found that certified farms are restoring more sensitive areas than non-certified farms, which indicates a potential synergy between law enforcement and certification. Our results suggest that certification impacts on deforestation and regeneration in more consolidated landscapes are weaker than what can be expected in places with weaker governance, such as agricultural frontiers or low-income countries. However, in consolidated landscapes there is still room to expand the benefits by turning certification schemes stricter with environmental legislation compliance. These potential synergies between private sustainable standards and compliance to government environmental policies can be explored and expanded in the improvement of certification schemes worldwide.
 
 \begin{flushleft}
 
@@ -26,11 +26,19 @@ Placeholeder: Ainda vou trabalhar no texto
 
 ## Introduction
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Agricultural sustainable standards are an important non-state governance intervention to reduce commodities pressures on biodiversity [@lenzen_international_2012]. In a certification process, a set of criteria of best practices on economic, social, and environmental aspects are defined and used to monitor and certify farmers [@lambin_sustainability_2018]. The label gives farmers access to a market of consumers willing to pay a higher price for prime products [@ferraro_price_2005].  Often, this translates into economic gains for farmers and positive social and, potentially, environmental outcomes [@meemken_sustainability_2021;@oya_effectiveness_2018]. Despite this, conservation benefits derived from certification are less clear [@blackman_producer-level_2011;@meemken_sustainability_2021]. Even though evidence on the positive biodiversity conservation impact of certification has been advocated [e.g. @haggar_tree_2015; hardt_does_2015 ], there is still uncertainty of whether or not observed differences can be attributed to sustainable standards or if some pre-existing conditions are impacting the results [@meemken_sustainability_2021].
+
+Certified crop areas are increasing globally, particularly in tropical biodiverse countries [@tayleur_global_2017]. Coffee lies among the main certified crops, with over 2 million ha and an estimated 20-40 % of the global production certified. This is mostly produced in Colombia (300 thousand ha), Brazil (200 thousand ha) and Peru (160 thousand ha) (https://standardsmap.org/en/trends). The Rainforest Alliance certification alone holds over 470 thousand ha of coffee fields under certification and Brazil is the leading country, with over 100 thousand ha. 
+
+The certification standard encompasses dozens of evaluation criteria, including no deforestation and complying with local environmental regulations, which can have different requirement levels depending on the country. In the case of Brazil, the Native Vegetation Protection Law (Federal Law 12.651/2012) mandates farmers to set aside 20% (for most Brazilian Biomes) to 80% (in the case of forest formation within the Amazon Biome) of their rural properties for conserving natural vegetation. If those are sensitive areas, such as riparian vegetation or mountain tops, they are defined by the legislation as Areas of Permanent Protection (APP) and must be protected within property boundaries. However, additional areas to achieve the legal natural vegetation cover requirements, defined as Legal Reserves, can be set either on-farm or off-farm [@mello_achieving_2021;@mello_integrating_2021]. Nevertheless, at present, the level of compliance is low, with estimated 11 Mha of vegetation deficit that must be restored or compensated [@freitas_offsetting_2017], but the certification schemes could be a way of stimulating adherence to such legislation.
+
+To shed light on agricultural certification impacts on conservation and, more specifically, about potential synergies between private sustainable standards and compliance to government environmental policies, we will address the following questions: (i) are there detectable effects of certification in reducing on-farm deforestation rates and (ii) in increasing vegetation levels? Considering that the vegetation cover requirements from the Native Vegetation Law can be set on-farm or off-farm in the case of Legal Reserves, (iii) the certification induces farms to set Legal Reserves on-farm? And finally, (iv) are there differences caused by certification on APP vegetation cover? To answer those questions, we will apply a robust counterfactual approach with before-after-control impact evaluation, considering a group of over 500 certified properties from one of the largest coffee-producing areas in Brazil.
 
 ## Methods
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Our study area comprises 84 municipalities between the States of São Paulo and Minas Gerais, within the Atlantic Forest and Cerrado Biomes (Figure 1), two globally recognized biodiversity hotspots (Myers et al., 2000). The region is the most important coffee-producing pole in Brazil, where coffee is managed by small to large producers, mostly under the sun-coffee system, which predominates in the country.
+
+We used data from the Rainforest Alliance, the major coffee certifier in Brazil. The Location of certified farms was obtained with Imaflora (“Instituto de Manejo e Certificação Florestal e Agrícola”). The certifier database consisted of point location and boundaries of coffee fields that we crossed with the public access database of the National Rural Environmental Register (Sistema Nacional de Cadastro Ambiental Rural - SICAR [^1]), available for the entire country (https://www.car.gov.br/publico/imoveis/index).  Farms' boundaries and APP and Legal Reserves areas were based on SICAR database. We identified data for 537 certified properties distributed across the 84 municipalities, 172 within the Atlantic Forest and 362 in the Cerrado. 
 
 ```{r Figure3.1, echo=FALSE, out.width = "100%", fig.cap="Spatial and temporal distribution of certified farms. (a) Distribution of farms per municipality across southern Atlantic Forest and Cerrado biomes; (b) number of certified farms per contract; (c) period under certification per contract from 2009 to 2020."}
 
@@ -41,19 +49,29 @@ include_graphics("figure/study_site2.jpg")
 
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Farm area in our dataset ranged from 0.76 – 4445.613 ha. Properties were either part of an individual certification scheme, or, in most cases, of a group certification (98%), in which case a cooperative of farmers are under the same contract (Figure 1b). For both cases, we know when the contract was initiated – the issued date – which ranged from 2009 to 2019 (Figure 1c); however, for group certification, some farms might not have been certified since the beginning of the contract.
+
+
+
+
+
+[^1]:The National System of the Rural Environmental Register is a mandatory online self-declaratory system containing spatial information about farm’s boundaries and their status regarding the Native Vegetation Protection Law.
 
 ### Certification requirements
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The Sustainable Agricultural Network (SAN) - Rainforest Alliance is one of the most important systems providing certification for agricultural production. It is based on standards dictating good practices for farmers, which are regularly updated. The standard structure relies on 45 critical criteria grouped into five principles, which include biodiversity conservation [principle 2; @noauthor_rainforest_2017]. The biodiversity principle forbids deforestation and stimulates a minimal native vegetation cover of 15% for farms or groups of farms growing shade-tolerant crops. It also requires a plan to increase or restore vegetation on riparian zones and marginal agricultural land. Our period of analysis overlaps two standards, one implemented in 2010 and valid until mid-2017, and another valid until mid-2021 [@noauthor_rainforest_2017]. The 2010 standard prohibited farms to deforest land after the certification process is initiated. From August 2017 and beyond, the farms had to comply with stricter rules, i.e. no deforestation five years before the certification or after 2014, whichever comes first.
 
 
 
 ### Constructing counterfactuals
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+To adequately account for derived certification causal effects, we worked on the construction of a counterfactual group of non-certified farms, from which we were able to compare differences in outcome from certified farms. Those differences could then be attributed to the certification process.  We also considered farms per biome in which they are located – the Atlantic Forest or Cerrado - to account for heterogeneous effects resulting from specific environmental legislation related to these regions. The Atlantic Forest is under one of the most restrictive forest legislations in the world, being deforestation prohibited in most cases (Law n. 11.428/2006). We expect this law to attenuate land-use changes in this biome. The same strict restrictions are not imposed on farms located in the Cerrado region.
 
-```{r , echo=FALSE, warning=FALSE, message=FALSE}
+
+First, we excluded certified farms from the SICAR dataset and considered all the remaining farms in the same municipalities as potential controls. Then, for both certified farms and potential controls, we defined and calculated a set of covariates that could influence the probability of a farm to adopt the Rainforest Alliance certification: natural vegetation cover; pasture cover; the sum of deforestation rates between 2004-2009; the sum of regeneration rates between 2004-2009; presence/absence of Legal Reserve; property area; mean slope (see Table \@ref(tab:t31) for a detailed explanation on the reasoning and how the variables were calculated). The data on land uses and on deforestation and regeneration were extracted from the public access database Project Mapbiomas, collection 5. MapBiomas is a multi-institutional initiative to generate annual land-cover and land-use maps for the Brazilian territory classifying Landsat images with 30 m resolution (full description on http://mapbiomas.org; see Supplementary Table C3 for land-use and land-cover classification accuracy evaluation at the property level). The data on the farm’s slope was extracted from the SRTM mission 1-arc-second global coverage [@earth_resources_observation_and_science_eros_center_shuttle_2017].
+
+
+```{r t31, echo=FALSE, warning=FALSE, message=FALSE}
 
 tabela_matching <- read.csv("data/variaveis_matching.csv",sep = ";")
 
@@ -67,41 +85,87 @@ column_spec( 1, width = "4cm")  %>%
 column_spec( 3, width = "7cm")  %>%
 kable_styling(latex_options = c("repeat_header")) %>%
 kable_styling(latex_options = c("hold_position")) %>%
-footnote(c("* Size ranges for small, medium or large properties are defined by the government", "at the municipal level,in accordance with intrinsic characteristics of the region",". For this reason, there are overlaps between categories."))
+footnote(c("* Size ranges for small, medium or large properties are classified by the government",
+           " at the municipal level in accordance with their fiscal modules (minimum size of",
+           " an economically viable area), following intrinsic characteristics of the region. The area  ",
+           " range for the categories is as follows: 0.5 ha – 260 ha (small);",
+           " 64 ha– 974 ha (medium); 267 - 8761 ha (large)."))
   
 
 ```
  
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
  
+We regressed a binary variable indicating whether a farm is certified or not on the above set of covariates, fitting a logistic model to estimate the farm’s propensity scores, or the estimated probability of being treated [@austin_introduction_2011;@stuart_matching_2010]. Scores were obtained for all units and the nearest-neighbor method (with replacement), with a ratio of 5 (number of control properties matched to each treatment property) (Equation 1 ) was used to define a set of non-certified farms that adequately work as controls. We also tested the performance of Mahalanobis and optimal methods [@stuart_matching_2010].
+
+$$ (1) T \sim Binomial (1,p_i) $$
+
+$$ logit(pi) = \alpha + (\beta VC_i + \beta PC_i + \beta DR_i + \beta RR_i + \beta LR_i + \beta APP_i + \beta A_i + \beta S_i) x p_i $$
+\begin{flushleft}
+
+where T is the treatment, $VC_i$ is vegetation cover, $PC_i$ is pasture cover, $DR_i$ is the deforestation rate, $RR_i$ is the regeneration rate, $LR_i$ is the presence/absence of Legal Reserves, $APP_i$ is the proportion of APP, $A_i$ is the property area and $S_i$  is the average slope (Table conferir!!).
+
+\end{flushleft}
+
+Also as a sensitivity test regarding our matching procedure, we applied a caliper width of 0.25 propensity score standard deviation [@austin_optimal_2011], which determines the maximum distance between a matched pair of control and treatment properties. We used the “MatchIt” package [@ho_matchit_2011] from R [@r_core_team_r:_2022]. 
+
+From a total of 64,375 properties, the matching procedure resulted in 169 certified farms matched with 764 control properties at the Atlantic Forest and 362 certified farms matched with 1675 non-certified farms at the Cerrado. The procedure satisfactorily improved covariate balance between the certified and non-certified farms (Supplementary Table C1 and C2; Supplementary Figures C1 and C2). 
+
+After matching non-certified farms with similar characteristics to the certified farms, we proceeded with panel regression analysis to compare temporal trends between treated and non-treated farms. We accessed trends before and after the certification adoption to determine whether there were any detectable impacts of certification intervention on farm’s management activities concerning natural vegetation cover changing trends (deforestation and regeneration) and legal compliance with the Natural Vegetation Protection Law.
+
 ### Panel data
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Our variables of interest for measuring the certification effect were: deforestation and regeneration rates (as defined in Table \@ref(tab:t31)) and legal compliance. This last variable considered two metrics: the proportion of vegetation deficit outside APP as a proxy for Legal Reserves that could be compensated off-farms; and the amount of vegetation cover at APP environmental sensitive areas. We calculated the Legal Reserve vegetation deficit as a ratio between the area to achieve 20% vegetation cover outside APPs, divided by property area. Both metrics were calculated for each year of the analysis. Because the legislation has different requirements for small properties in terms of Legal Reserves and APP, for the legal compliance analysis, we disregarded small properties.
+
+To compare temporal trends before and after the treatment, we have considered a total period between 2004 and 2017, throughout which our treatment farms became certified. Certification contracts were settled in different initial times and comprised one to several farms (see Methods section 4.3.2). 
+
+Because of the difference in treatment periods, we have adopted a difference-in-differences approach with multiple periods and variations in treatment time. To account for that, we have created a dummy binary variable (0-1) indicating whether a farm was certified or not at a given year. Control farms had always a value of 0 over the entire period considered. Treatment farms were attributed with a value of 0 before the certification and with a value of 1 from the initial certification time until the last year of the analysis. For parameter estimation, we have used the R package *“did”* [@callaway_did_2020], which applies the methodology described in Callaway and Sant'Anna [-@callaway_difference--differences_2021]. The general notation is as follows (Equation 2):
+
+$$  for \ farms \ in \ the \ never-treated group $$
+$$ (2)  Y_{it} = Y_{it(0)}$$
+$$  for \ farms \ in \ other \ groups $$
+$$  (2) Y_{it} = 1 \{G_i > t\} $$
+$$ Y_{it}(0) +1 \{G_i \le t\} Y_{it}(G_i)  $$
+
+\begin{flushleft}
+
+where $Y_it$ is farm’s i observed outcome in time $t$,  $Y_{it} (0)$ is farm’s $i$ untreated potential outcome and  $G_i$ is the year when the farm $i$ becomes certified. Groups, in this case, are understood as farms that were treated for the first time in the same year. 
+
+\end{flushleft}
+
+To account for potential anticipation effects, where landowners with a future intention to adopt certification might manage the land to be in accordance with the exigencies – e.g. recovering vegetation – before getting the certification, we have performed the same regression analysis with G_i minus 1, 2 and 3 years.
 
 ## Results
 
-```{r Figure3.2, echo=FALSE, out.width = "100%", fig.cap="Exploratory annual trends for certified and non-certified properties. Annual deforestation rate (a), regeneration rate (b), vegetation deficit outside APPs(c), and proportion of APP covered with natural vegetation. The distribution of values is illustrated by the gray dots and the average annual value by the red and blue dots, for non-certified and certified farms, respectively. The yellow shade is delimited by the minimum and median certification dates."}
+
+Overall, certified and non-certified farms had very low deforestation and regeneration rates before and after the certification period, between 2005-2017, both at the Atlantic Forest and the Cerrado (Figure  \@ref(fig:Figure32) a; Figure \@ref(fig:Figure32) b). They also had low vegetation deficit outside APP areas, but average values suggest that certified farms have a lower deficit than non-certified ones (Figure \@ref(fig:Figure32) c). In fact, the mean proportion of farm area covered with natural vegetation was above the 20% legal requirement at the period for all years (Supplementary Figure C3). The proportion of vegetated APP showed a trend of increase over time, with more intensity for certified properties within the Atlantic Forest (Figure \@ref(fig:Figure32) d).
+
+```{r Figure32, echo=FALSE, out.width = "100%", fig.cap="Observed annual trends for certified and non-certified properties. Annual deforestation rate (a), regeneration rate (b), vegetation deficit outside APPs (c), and proportion of APP covered with natural vegetation (d). The distribution of values is illustrated by the gray dots and the average annual value by the red and blue dots, for non-certified and certified farms, respectively. The yellow shade is delimited by the minimum and median certification dates"}
 
 include_graphics("figure/descriptive_figure_comfaixa_deficit.jpeg")
 
 
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-```{r Figure3.3, echo=FALSE, out.width = "100%", fig.cap="Average group-time treatment effect for properties within the Atlantic Forest. The red dots show the point estimates and 95 \\% confidence bands for the period pre-treatment. The blue dots show the point estimates and 95 \\% confidence bands for the period post-treatment. The figure shows the average effect in deforestation (a), natural regeneration (b), the vegetation deficit outside APPs (c), and the proportion of APP covered with natural vegetation between certified and non-certified farms (d). The x-axis represents the certification time: negative values are years before the certification and positive values are years after the certification, which is represented in time zero. Confidence bands crossing the zero on the y axis (red dotted line) are non-significant. Positive values mean that the treatment had a positive effect and negative values the opposite."}
+Certified and non-certified farms showed no significant difference regarding deforestation and regeneration rates that could be attributed to the adoption of the Rainforest Alliance certification. This was true for properties within the Atlantic Forest and Cerrado (Figures \@ref(fig:Figure33) a-b and \@ref(fig:Figure34) a-b; Supplementary Tables C 4-7). Similarly, the certification intervention did not affect the “legal natural vegetation cover”, when we compared treatment and control groups (Figures \@ref(fig:Figure33)c and  \@ref(fig:Figure34) c; Supplementary Tables C 8-9). 
+
+
+```{r Figure33, echo=FALSE, out.width = "100%", fig.cap="The red dots show the point estimates and 95 \\% confidence bands for the period pre-treatment. The blue dots show the point estimates and 95 \\% confidence bands for the period post-treatment. The figure shows the average effect in deforestation (a), natural regeneration (b), the vegetation deficit outside APPs (c), and the proportion of APP covered with natural vegetation between certified and non-certified farms (d). The x-axis represents the certification time: negative values are years before the certification and positive values are years after the certification, which is represented in time zero. Confidence bands crossing the zero on the y axis (red dotted line) are non-significant. Positive values mean that the treatment had a positive effect; negative values mean the opposite. Number of control and treatment farms for figures a-b: 764; 169 respectively. Number of control and treatment farms for figures c-d: 130; 35. "}
 
 include_graphics("figure/panel_regression_results_ma_deficit.jpeg")
 
 
 ```
 
+On the other hand, a trend of a positive effect of certification in the increase of permanent protection areas (APP) covered with natural vegetation is clearly observed for farms within the Atlantic Forest region (Figure \@ref(fig:Figure33) d), although without statistical significance. However, when we considered an anticipation effect, setting the initial certification time 1 to 3 years before the actual date, this trend became significant, particularly for a short anticipation (one year; Figure \@ref(fig:Figure34); Supplementary Tables C 11-13). The other variables remained with no notable changes (Supplementary Figures C 4-6)
+
+This positive trend for APPs was less clear for properties in the Cerrado, as the initial increase in the average difference between certified and non-certified farms occurred in the first four years, but then is followed by a decrease to almost zero, being this effect never significant (Figure \@ref(fig:Figure34) d). Besides, considering a potential anticipation by farmers in restoring their APPs before obtaining the certification did not make the pattern more clear for farms in the Cerrado (Supplementary Figures C 7-9). 
 
 
 
 
-
-```{r Figure3.4, echo=FALSE, out.width = "100%", fig.cap="Average group-time treatment effect for properties within the Cerrado. The red dots show the point estimates and 95 \\% confidence bands for the period pre-treatment. The blue dots show the point estimates and 95 \\% confidence bands for the period post-treatment. The figure shows the average effect in deforestation (a), natural regeneration (b), the vegetation deficit outside APPs (c), and the proportion of APP covered with natural vegetation between certified and non-certified farms (d). The x-axis represents the certification time: negative values are years before the certification and positive values are years after the certification, which is represented in time zero. Confidence bands crossing the zero on the y axis (red dotted line) are non-significant. Positive values mean that the treatment had a positive effect and negative values the opposite."}
+```{r Figure34, echo=FALSE, out.width = "100%", fig.cap="Average group-time treatment effect for properties within the Cerrado. The red dots show the point estimates and 95\\% confidence bands for the period pre-treatment. The blue dots show the point estimates and 95\\% confidence bands for the period post-treatment. The figure shows the average effect in deforestation (a), natural regeneration (b), the vegetation deficit outside APPs (c), and the proportion of APP covered with natural vegetation between certified and non-certified farms (d). The panel shows the differences before (red) and after (blue) the certification was implemented at time zero (vertical dotted line). The x-axis represents the certification time: negative values are years before the certification and positive values are years after the certification, which is represented in time zero. Confidence bands crossing the zero on the y axis (red dotted line) are non-significant. Positive values mean that the treatment had a positive effect; negative values mean the opposite. Number of control and treatment farms for figures a-b, respectively: 1675; 362. Number of control and treatment farms for figures c-d: 496; 108."}
 
 include_graphics("figure/panel_regression_results_ce_deficit.jpeg")
 
@@ -110,7 +174,7 @@ include_graphics("figure/panel_regression_results_ce_deficit.jpeg")
 
 
 
-```{r Figure3.5, echo=FALSE, out.width = "45%", fig.cap="APP vegetation average group-time treatment effect for properties within the Atlantic Forest, considering an anticipation effect. The red dots show the point estimates and 95 \\% confidence bands for the period pre-treatment. The blue dots show the point estimates and 95 \\% confidence bands for the period post-treatment. To account for an anticipation effect, instead of entering the real certification date on the model, we considered time zero as: certification date minus one year (a); certification date minus two years (b); and certification date minus three years (c). The x-axis represents the certification time: negative values are years before the certification and positive values are years after the certification, which is represented in time zero. Confidence bands crossing the zero on the y axis (red dotted line) are non-significant. Positive values mean that the treatment had a positive effect and negative values the opposite."}
+```{r Figure35, echo=FALSE, out.width = "45%", fig.cap="APP vegetation average group-time treatment effect for properties within the Atlantic Forest, considering an anticipation effect. The red dots show the point estimates and 95 \\% confidence bands for the period pre-treatment. The blue dots show the point estimates and 95 \\% confidence bands for the period post-treatment. To account for an anticipation effect, instead of entering the real certification date on the model, we considered time zero as: certification date minus one year (a); certification date minus two years (b); and certification date minus three years (c). The x-axis represents the certification time: negative values are years before the certification and positive values are years after the certification, which is represented in time zero. Confidence bands crossing the zero on the y axis (red dotted line) are non-significant. Positive values mean that the treatment had a positive effect and negative values the opposite. Number of control and treatment farms, respectively: 130; 35."}
 
 include_graphics("figure/panel_antic_apps_ma.jpeg")
 
@@ -120,7 +184,16 @@ include_graphics("figure/panel_antic_apps_ma.jpeg")
 
 ## Discussion
 
-### Certification in consolidated agricultural landscapes   as a tool to achieve conservation targets: findings and limitations
+Our results show no certification-derived effects on the deforestation and regeneration rates and in the natural vegetation deficit for certified farms. However, we did find a trend suggesting that certified farms are restoring more of their areas of permanent protection (APP) than non-certified farms, which indicates a potential synergy between law enforcement of the Natural Vegetation Protection Law and voluntary mechanisms, such as agricultural certification. Here we discuss why the certification process might not be effective for some conservation goals (e.g. reduce deforestation and increase natural vegetation regeneration) in a typical consolidated agricultural landscape, but still promote advances in others (such as compliance with environmental legislation), and suggest ways through which certification schemes be even more effective promoting sustainable agricultural practices from a conservation perspective.
+
+
+### Limitations of certification in consolidated agricultural landscapes
+
+Although we still need a wider range of studies evaluating the effects of certification in different social-environmental contexts and for different agricultural systems [@meemken_sustainability_2021], there is mounting evidence that certified farms have economic, social, and environmental gains [@meemken_sustainability_2021;@oya_effectiveness_2018;@tayleur_where_2018; @vanderhaegen_private_2018 ]. Nevertheless, studies on environmental gains are less conclusive [@@meemken_sustainability_2021], and gather more non-significant results than other dimensions often evaluated [@defries_is_2017]. This more limited effect of certification in environmental aspects seems to be confirmed by our results on coffee certification, once we did not find any effect of certification reducing deforestation rates or increasing the amount of natural vegetation within farms.
+
+This lack of effect can be partially explained by the environmental conditions of the study region. This region is composed by consolidated agricultural landscapes in southeast Brazil, in which coffee expansion occurred mostly in the past, in the XVIII-XIX century for the Atlantic Forest [@joly_experiences_2014], and on the 1970s in the Cerrado [@pereira_bruno_coffee_2020]. The composition and dynamics of the landscape in recent decades are stable, with relatively low rates of deforestation and regeneration at the property level, although there is a regional dynamic of younger forests replacing older forests [@rosa_hidden_2021]. Furthermore, the area holds characteristics often recognized as attractive for certification programs, such as a well-established supply chain, high agricultural suitability, and relatively low environmental and social risks, in a middle-income developing country [@tayleur_global_2017;@tscharntke_conserving_2015 ]. As such, there might be few opportunities in reducing deforestation in a region where native vegetation has already been largely suppressed and its remnants are under relative control. Further, although native areas promote the increase of productivity per coffee tree through improvement of ecosystem service provision [@gonzalez-chaves_forest_2020],  setting aside productive land for conservation and regeneration means economic losses in the present time, especially for certified farms, once certified prime products raise land opportunity cost.
+ Finally, the existence of more restrictive environmental legislation, such as the Native Vegetation Protection Law and the Atlantic Forest law, which already severely limits deforestation within farms, is likely also contributing with an attenuated certification effect. In addition to that, the coffee supply chain – including certified and non-certified farms -- is under high levels of control, with regular monitoring reports by external organizations [e.g. @gomes_monitor_2021; @oxfam_coffee_2021], what could be an additional factor in explaining the low certification additionality.
+
 
 ### Potential synergies between certification and environmental compliance
 
