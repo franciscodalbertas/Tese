@@ -381,7 +381,7 @@ knitr::include_graphics("figure/sup_smd_ce.jpeg")
 ```
 
 
-```{r figurec3, out.width = "50%",echo=FALSE,fig.cap="Exploratory annual trends for the proportion of vegetation cover at certified and non-certified properties. The distribution of values is illustrated by the grey dots and the average annual value by the red and blue dots, for non-certified and certified farms, respectively. The yellow shade is delimited by the minimum and median certification dates.", fig.align='center'}
+```{r figurec3, out.width = "50%",echo=FALSE,fig.cap="Observed annual trends for the proportion of vegetation cover at certified and non-certified properties. The distribution of values is illustrated by the grey dots and the average annual value by the red and blue dots, for non-certified and certified farms, respectively. The yellow shade is delimited by the minimum and median certification dates.", fig.align='center'}
 
 knitr::include_graphics("figure/descriptive_figure_comfaixa_pveg.jpeg")
 
@@ -451,6 +451,9 @@ knitr::include_graphics("figure/panel_antic_3year_ce.jpeg")
 
 ```
 
+
+\newpage
+
 ## Supplementary Tables
 
 ```{r , echo=FALSE, warning=FALSE, message=FALSE}
@@ -505,7 +508,11 @@ column_spec( 3, width = "2cm") %>%
 column_spec( 4, width = "2cm") %>%
 column_spec( 5, width = "2cm") %>%
 kable_styling(latex_options = c("repeat_header","hold_position")) %>%
-footnote(c("* Size ranges for small, medium or large properties are defined by the government", "at the municipal level,in accordance with intrinsic characteristics of the region",". For this reason, there are overlaps between categories."))
+footnote(c("* Size ranges for small, medium or large properties are classified by the government",
+           " at the municipal level in accordance with their fiscal modules (minimum size of",
+           " an economically viable area), following intrinsic characteristics of the region. The area  ",
+           " range for the categories is as follows: 0.5 ha – 260 ha (small);",
+           " 64 ha– 974 ha (medium); 267 - 8761 ha (large)."))
 
 
 
