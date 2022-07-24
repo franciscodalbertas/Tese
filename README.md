@@ -1,2 +1,2 @@
 # Tese
-Tese de doutorado elaborado com o pacote thesisdown
+Thesis created with the package thesisdown
